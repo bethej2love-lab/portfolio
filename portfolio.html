@@ -375,6 +375,36 @@
         font-size: 14px;
       }
     }
+  
+    /* 하단 토글(보고서) */
+    details.inline-toggle {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: #f9fafb;
+    }
+    details.inline-toggle > summary.inline-toggle-summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text-main);
+    }
+    details.inline-toggle > summary.inline-toggle-summary::-webkit-details-marker {
+      display: none;
+    }
+    details.inline-toggle > summary.inline-toggle-summary::after {
+      content: "▾";
+      float: right;
+      color: var(--text-sub);
+    }
+    details.inline-toggle[open] > summary.inline-toggle-summary::after {
+      content: "▴";
+    }
+    .toggle-body {
+      margin-top: 10px;
+    }
+
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -474,34 +504,191 @@
         <canvas id="projectionChart"></canvas>
       </div>
     </section>
-  </div>
+<section class="card">
+  <p class="section-caption" style="margin-top: 4px;">
+    ※ 2026년 목표: 포트폴리오 단순화 및 집중도를 높이기 위해 보유 종목 수를 현재 대비 2개 축소 예정
+  </p>
+</section>
+
+<section class="card">
+  <details class="inline-toggle">
+    <summary class="inline-toggle-summary">📌 포트폴리오 분석 요약 (보고서) 보기</summary>
+    <div class="toggle-body">
+  <p style="margin: 0 0 6px;"><strong>포트폴리오 분석 요약</strong> <span style="color: var(--text-sub);">· 2026년 1월 보고서</span></p>
+
+  <h3 style="margin: 14px 0 6px; font-size: 14px;">최신 포트폴리오 구성 (업데이트)</h3>
+  <div class="table-wrapper" style="margin-top:10px;">
+<table class="portfolio-table">
+<thead><tr>
+<th>구분</th>
+<th>이전</th>
+<th></th>
+<th>현재</th>
+<th>변화</th>
+</tr></thead><tbody>
+<tr>
+<td>SPY/VOO</td>
+<td>36%</td>
+<td>→</td>
+<td>36%</td>
+<td>변동 없음</td>
+</tr>
+<tr>
+<td>VWO</td>
+<td>3%</td>
+<td>→</td>
+<td>5%</td>
+<td>+2%p</td>
+</tr>
+<tr>
+<td>QQQ</td>
+<td>5%</td>
+<td>→</td>
+<td>3%</td>
+<td>-2%p</td>
+</tr>
+<tr>
+<td>기타 ETF</td>
+<td>16.5%</td>
+<td>→</td>
+<td>16.5%</td>
+<td>변동 없음</td>
+</tr>
+<tr>
+<td>개별주</td>
+<td>39.5%</td>
+<td>→</td>
+<td>39.5%</td>
+<td>변동 없음</td>
+</tr>
+</tbody></table></div>
+  <p style="margin: 10px 0 6px; font-weight: 600;">주요 변경사항</p>
+  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+    <li>VWO(신흥국) 비중: 3% → 5%</li>
+    <li>QQQ(나스닥) 비중: 5% → 3%</li>
+    <li>총 비중: 100% 유지</li>
+  </ul>
+
+  <h3 style="margin: 16px 0 6px; font-size: 14px;">30년 시나리오 분석 </h3>
+  <div class="table-wrapper" style="margin-top:10px;">
+<table class="portfolio-table">
+<thead><tr>
+<th>시나리오</th>
+<th>연 수익률</th>
+<th>2055년 예상액</th>
+<th>목표 달성</th>
+</tr></thead><tbody>
+<tr>
+<td>공격적</td>
+<td>18%</td>
+<td>약 227억 원</td>
+<td>2.3배 달성</td>
+</tr>
+<tr>
+<td>기준</td>
+<td>15%</td>
+<td>약 109억 원</td>
+<td>목표 달성 ✓</td>
+</tr>
+<tr>
+<td>보수적</td>
+<td>12%</td>
+<td>약 51억 원</td>
+<td>목표 미달</td>
+</tr>
+</tbody></table></div>
+
+  <h3 style="margin: 16px 0 6px; font-size: 14px;">핵심 인사이트</h3>
+
+  <p style="margin: 10px 0 6px; font-weight: 600;">1) 목표 달성 필수 수익률: 연 15%</p>
+  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+    <li>연 12%(S&P 500 평균 수준) 기준: 2055년 약 51억 원 → 목표 미달</li>
+    <li>연 15% 달성 시: 2055년 약 109억 원 → 목표 달성</li>
+    <li>연 18% 달성 시: 2055년 약 227억 원 → 목표의 2.3배</li>
+  </ul>
+
+  <p style="margin: 12px 0 6px; font-weight: 600;">2) 15% 수익률 달성 전략</p>
+  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+    <li>S&P 500(36%)의 10~11% + 성장주(28%)의 20%+ 조합으로 평균 15% 가능</li>
+    <li>기술주 비중(실질 40~50%)이 지속적으로 시장 아웃퍼폼 필요</li>
+    <li>미래 테마(15.5%) 중 일부의 성공적 성장이 필요</li>
+    <li>정기 리밸런싱으로 수익률 1~2%p 추가 확보 가능</li>
+  </ul>
+
+  <p style="margin: 12px 0 6px; font-weight: 600;">3) 리스크 관리</p>
+  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+    <li>기술주 집중도가 높아 조정 시 -30% 이상 손실 가능</li>
+    <li>대응: 조정을 매수 기회로 활용, 공포 매도 금지</li>
+    <li>VWO 증액(5%)으로 지역 분산 개선 → 리스크 완화</li>
+  </ul>
+
+  <h3 style="margin: 16px 0 6px; font-size: 14px;">종합 평가</h3>
+  <p style="margin: 0 0 6px;"><strong>평가 점수:</strong> 8.5/10</p>
+  <p style="margin: 0 0 6px; color: var(--text-sub);">VWO 증액으로 지역 분산이 개선되어 평가 점수가 8.0에서 8.5로 상승했습니다.</p>
+
+  <p style="margin: 12px 0 6px; font-weight: 600;">목표 달성 가능성</p>
+  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+    <li>현실적: 연 15% 수익률은 도전적이지만 달성 가능한 목표</li>
+    <li>기술주 비중이 높아 AI 혁명 수혜 시 15~18% 가능</li>
+    <li>규율 있는 운용과 리밸런싱이 성공의 핵심</li>
+  </ul>
+
+  <h3 style="margin: 16px 0 6px; font-size: 14px;">추가 최적화 제안</h3>
+
+  <p style="margin: 10px 0 6px; font-weight: 600;">1) 고비용 ETF 재검토</p>
+  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+    <li>ARKQ(0.75%), TAN(0.70%), GRID(0.63%)는 장기적으로 비용 부담</li>
+    <li>예시: 0.70% 수수료는 30년간 약 19%의 수익률 손실로 해석 가능</li>
+    <li>제안: 1~2개를 저비용 대안 또는 개별주로 대체 고려</li>
+  </ul>
+
+  <p style="margin: 12px 0 6px; font-weight: 600;">2) 섹터 다각화</p>
+  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+    <li>현재: 기술 60%+, 헬스케어 2%, 금융 0%, 소비재 0%</li>
+    <li>제안: 금융 ETF(XLF) 2~3% 추가로 밸류 노출 확보</li>
+  </ul>
+
+  <p style="margin: 12px 0 6px; font-weight: 600;">3) 정기 점검 계획</p>
+  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+    <li>연 1회 리밸런싱(목표 비중 ±5%p 초과 시)</li>
+    <li>분기 1회 포트폴리오 성과 점검</li>
+    <li>5년마다 전략 재검토 및 섹터 조정</li>
+  </ul>
+
+  <p style="margin: 14px 0 0; font-weight: 600;">성공의 핵심</p>
+  <p style="margin: 4px 0 0; color: var(--text-sub);">시장 변동성에 흔들리지 않는 장기 투자 원칙</p>
+</div>
+  </details>
+</section>
+
+</div>
 
 <script>
   // 포트폴리오 데이터
   const portfolioData = [
     { name: "SPY / VOO (S&P 500)", ticker: "SPY / VOO", type: "etf", typeLabel: "ETF · 지수", weight: 36, etfKey: "SPY_VOO" },
     { name: "알파벳 A", ticker: "GOOGL", type: "stock", typeLabel: "개별주", weight: 5 },
-    { name: "QQQ", ticker: "QQQ", type: "etf", typeLabel: "ETF · IT", weight: 5, etfKey: "QQQ" },
     { name: "GLD", ticker: "GLD", type: "etf", typeLabel: "ETF · 원자재", weight: 5, etfKey: "GLD" },
+    { name: "VWO", ticker: "VWO", type: "etf", typeLabel: "ETF · 신흥국", weight: 5, etfKey: "VWO" },
     { name: "JEPQ", ticker: "JEPQ", type: "etf", typeLabel: "ETF · 배당/옵션", weight: 4, etfKey: "JEPQ" },
     { name: "XAR", ticker: "XAR", type: "etf", typeLabel: "ETF · 항공/방산", weight: 4, etfKey: "XAR" },
     { name: "팔란티어", ticker: "PLTR", type: "stock", typeLabel: "개별주", weight: 3.5 },
     { name: "테슬라", ticker: "TSLA", type: "stock", typeLabel: "개별주", weight: 3.5 },
+    { name: "QQQ", ticker: "QQQ", type: "etf", typeLabel: "ETF · IT", weight: 3, etfKey: "QQQ" },
     { name: "ARKQ", ticker: "ARKQ", type: "etf", typeLabel: "ETF · 혁신/로봇", weight: 3, etfKey: "ARKQ" },
     { name: "QTUM", ticker: "QTUM", type: "etf", typeLabel: "ETF · 퀀텀/머신러닝", weight: 3, etfKey: "QTUM" },
-    { name: "VWO", ticker: "VWO", type: "etf", typeLabel: "ETF · 신흥국", weight: 3, etfKey: "VWO" },
     { name: "GRID", ticker: "GRID", type: "etf", typeLabel: "ETF · 전력 인프라", weight: 2.5, etfKey: "GRID" },
     { name: "TAN", ticker: "TAN", type: "etf", typeLabel: "ETF · 태양광", weight: 2.5, etfKey: "TAN" },
+    { name: "VEA", ticker: "VEA", type: "etf", typeLabel: "ETF · 선진국(미국 제외)", weight: 2, etfKey: "VEA" },
     { name: "애플", ticker: "AAPL", type: "stock", typeLabel: "개별주", weight: 2 },
     { name: "엔비디아", ticker: "NVDA", type: "stock", typeLabel: "개별주", weight: 2 },
     { name: "마이크로소프트", ticker: "MSFT", type: "stock", typeLabel: "개별주", weight: 2 },
     { name: "아마존", ticker: "AMZN", type: "stock", typeLabel: "개별주", weight: 2 },
     { name: "일라이 릴리", ticker: "LLY", type: "stock", typeLabel: "개별주", weight: 2 },
-    { name: "VEA", ticker: "VEA", type: "etf", typeLabel: "ETF · 선진국(미국 제외)", weight: 2, etfKey: "VEA" },
-    { name: "메타", ticker: "META", type: "stock", typeLabel: "개별주", weight: 1.5 },
+    { name: "메타", ticker: "META", type: "stock", typeLabel: "개별주", weight: 2 },
     { name: "아이온큐", ticker: "IONQ", type: "stock", typeLabel: "개별주", weight: 1.5 },
-    { name: "코인베이스", ticker: "COIN", type: "stock", typeLabel: "개별주", weight: 1.5 },
     { name: "브로드컴", ticker: "AVGO", type: "stock", typeLabel: "개별주", weight: 1.5 },
+    { name: "코인베이스", ticker: "COIN", type: "stock", typeLabel: "개별주", weight: 1 },
     { name: "템퍼스 AI", ticker: "TEM", type: "stock", typeLabel: "개별주", weight: 1 },
     { name: "로켓랩", ticker: "RKLB", type: "stock", typeLabel: "개별주", weight: 1 }
   ];
@@ -1111,7 +1298,7 @@
       });
     });
   }
+
 </script>
 </body>
 </html>
-
