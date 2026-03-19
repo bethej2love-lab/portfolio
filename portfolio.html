@@ -15,9 +15,7 @@
       --text-sub: #6b7280;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -29,21 +27,11 @@
       padding: 24px;
     }
 
-    .container {
-      width: 100%;
-      max-width: 960px;
-    }
+    .container { width: 100%; max-width: 960px; }
 
-    h1 {
-      font-size: 24px;
-      margin: 0 0 4px;
-    }
+    h1 { font-size: 24px; margin: 0 0 4px; }
 
-    .subtitle {
-      font-size: 13px;
-      color: var(--text-sub);
-      margin-bottom: 16px;
-    }
+    .subtitle { font-size: 13px; color: var(--text-sub); margin-bottom: 16px; }
 
     .card {
       background: var(--card);
@@ -54,7 +42,6 @@
       border: 1px solid var(--border);
     }
 
-    /* 요약 섹션 */
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -69,25 +56,11 @@
       border: 1px solid #e5e7eb;
     }
 
-    .summary-label {
-      font-size: 11px;
-      color: var(--text-sub);
-      margin-bottom: 4px;
-    }
+    .summary-label { font-size: 11px; color: var(--text-sub); margin-bottom: 4px; }
 
-    .summary-value {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text-main);
-    }
+    .summary-value { font-size: 18px; font-weight: 600; color: var(--text-main); }
 
-    /* 검색 및 정렬 */
-    .controls {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
+    .controls { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
 
     .search-box {
       flex: 1;
@@ -99,16 +72,9 @@
       font-family: inherit;
     }
 
-    .search-box:focus {
-      outline: none;
-      border-color: var(--accent);
-    }
+    .search-box:focus { outline: none; border-color: var(--accent); }
 
-    /* 테이블 */
-    .table-wrapper {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
+    .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
     .portfolio-table {
       width: 100%;
@@ -116,9 +82,7 @@
       font-size: 13px;
     }
 
-    .portfolio-table thead {
-      background: #f9fafb;
-    }
+    .portfolio-table thead { background: #f9fafb; }
 
     .portfolio-table th,
     .portfolio-table td {
@@ -129,9 +93,7 @@
     }
 
     .portfolio-table th:nth-child(4),
-    .portfolio-table td:nth-child(4) {
-      text-align: right;
-    }
+    .portfolio-table td:nth-child(4) { text-align: right; }
 
     .portfolio-table thead th {
       font-weight: 600;
@@ -147,27 +109,11 @@
       padding-right: 20px !important;
     }
 
-    .sortable:hover {
-      background: #f3f4f6;
-    }
+    .sortable:hover { background: #f3f4f6; }
 
-    .sortable::after {
-      content: '⇅';
-      position: absolute;
-      right: 6px;
-      opacity: 0.3;
-      font-size: 10px;
-    }
-
-    .sortable.asc::after {
-      content: '↑';
-      opacity: 1;
-    }
-
-    .sortable.desc::after {
-      content: '↓';
-      opacity: 1;
-    }
+    .sortable::after { content: '⇅'; position: absolute; right: 6px; opacity: 0.3; font-size: 10px; }
+    .sortable.asc::after { content: '↑'; opacity: 1; }
+    .sortable.desc::after { content: '↓'; opacity: 1; }
 
     .badge-etf {
       display: inline-flex;
@@ -193,10 +139,7 @@
       font-weight: 500;
     }
 
-    .weight-cell {
-      font-variant-numeric: tabular-nums;
-      font-weight: 600;
-    }
+    .weight-cell { font-variant-numeric: tabular-nums; font-weight: 600; }
 
     .ticker {
       font-family: "Menlo", "SF Mono", ui-monospace, monospace;
@@ -204,17 +147,9 @@
       letter-spacing: 0.02em;
     }
 
-    .section-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin: 0 0 8px;
-    }
+    .section-title { font-size: 16px; font-weight: 600; margin: 0 0 8px; }
 
-    .section-caption {
-      font-size: 12px;
-      color: var(--text-sub);
-      margin-bottom: 8px;
-    }
+    .section-caption { font-size: 12px; color: var(--text-sub); margin-bottom: 8px; }
 
     .etf-link {
       border: none;
@@ -227,37 +162,17 @@
       text-align: left;
     }
 
-    .etf-link:hover {
-      text-decoration: underline;
-    }
+    .etf-link:hover { text-decoration: underline; }
 
-    .etf-detail-row {
-      display: none;
-      background: #f9fafb;
-    }
+    .etf-detail-row { display: none; background: #f9fafb; }
 
-    .etf-detail-row td {
-      border-bottom: 1px solid #edf0f4;
-      padding-top: 4px;
-      padding-bottom: 10px;
-    }
+    .etf-detail-row td { border-bottom: 1px solid #edf0f4; padding-top: 4px; padding-bottom: 10px; }
 
-    .etf-detail {
-      font-size: 12px;
-      color: var(--text-sub);
-    }
+    .etf-detail { font-size: 12px; color: var(--text-sub); }
 
-    .etf-detail-header {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 4px;
-    }
+    .etf-detail-header { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
 
-    .etf-detail-name {
-      font-weight: 600;
-      color: var(--text-main);
-    }
+    .etf-detail-name { font-weight: 600; color: var(--text-main); }
 
     .etf-detail-ticker {
       font-family: "Menlo", "SF Mono", ui-monospace, monospace;
@@ -268,26 +183,13 @@
       color: #1e3a8a;
     }
 
-    .etf-detail-desc {
-      margin: 0 0 4px;
-      line-height: 1.5;
-    }
+    .etf-detail-desc { margin: 0 0 4px; line-height: 1.5; }
 
-    .etf-detail-meta {
-      margin: 4px 0 2px;
-      font-size: 11px;
-      color: var(--text-sub);
-    }
+    .etf-detail-meta { margin: 4px 0 2px; font-size: 11px; color: var(--text-sub); }
 
-    .etf-detail-holdings {
-      margin: 0;
-      padding-left: 16px;
-      font-size: 11px;
-    }
+    .etf-detail-holdings { margin: 0; padding-left: 16px; font-size: 11px; }
 
-    .etf-detail-holdings li {
-      margin-bottom: 2px;
-    }
+    .etf-detail-holdings li { margin-bottom: 2px; }
 
     .holding-link {
       border: none;
@@ -299,27 +201,13 @@
       color: #111827;
     }
 
-    .holding-link:hover {
-      text-decoration: underline;
-    }
+    .holding-link:hover { text-decoration: underline; }
 
-    .holding-info {
-      margin-top: 6px;
-      font-size: 11px;
-      color: var(--text-sub);
-    }
+    .holding-info { margin-top: 6px; font-size: 11px; color: var(--text-sub); }
 
-    .chart-wrapper {
-      position: relative;
-      max-width: 640px;
-      margin: 0 auto;
-    }
+    .chart-wrapper { position: relative; max-width: 640px; margin: 0 auto; }
 
-    #weightPieChart,
-    #projectionChart {
-      width: 100%;
-      height: auto;
-    }
+    #weightPieChart, #projectionChart { width: 100%; height: auto; }
 
     .scale-tabs {
       display: inline-flex;
@@ -340,71 +228,94 @@
       color: #6b7280;
     }
 
-    .scale-tab.active {
-      background: #2563eb;
-      color: #ffffff;
-      font-weight: 600;
-    }
+    .scale-tab.active { background: #2563eb; color: #ffffff; font-weight: 600; }
 
-    @media (max-width: 640px) {
-      body {
-        padding: 12px;
-      }
-      .card {
-        padding: 12px;
-        border-radius: 12px;
-      }
-      .portfolio-table th,
-      .portfolio-table td {
-        padding: 6px 8px;
-        font-size: 12px;
-      }
-      .summary-grid {
-        grid-template-columns: 1fr;
-      }
-      .controls {
-        flex-direction: column;
-      }
-      .search-box {
-        width: 100%;
-      }
-      h1 {
-        font-size: 20px;
-      }
-      .section-title {
-        font-size: 14px;
-      }
-    }
-  
-    /* 하단 토글(보고서) */
-    details.inline-toggle {
+    /* 월별 보고서 탭 */
+    .report-toggle {
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 10px 12px;
       background: #f9fafb;
     }
-    details.inline-toggle > summary.inline-toggle-summary {
+
+    .report-toggle > summary.report-summary {
       cursor: pointer;
       list-style: none;
       font-weight: 600;
       font-size: 13px;
       color: var(--text-main);
     }
-    details.inline-toggle > summary.inline-toggle-summary::-webkit-details-marker {
-      display: none;
-    }
-    details.inline-toggle > summary.inline-toggle-summary::after {
+
+    .report-toggle > summary.report-summary::-webkit-details-marker { display: none; }
+
+    .report-toggle > summary.report-summary::after {
       content: "▾";
       float: right;
       color: var(--text-sub);
     }
-    details.inline-toggle[open] > summary.inline-toggle-summary::after {
-      content: "▴";
-    }
-    .toggle-body {
-      margin-top: 10px;
+
+    .report-toggle[open] > summary.report-summary::after { content: "▴"; }
+
+    .report-body { margin-top: 14px; }
+
+    /* 월 탭 */
+    .month-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
     }
 
+    .month-tab {
+      border: none;
+      background: none;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-sub);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      border-radius: 4px 4px 0 0;
+      font-family: inherit;
+      transition: color 0.15s;
+    }
+
+    .month-tab:hover { color: var(--text-main); }
+
+    .month-tab.active {
+      color: #2563eb;
+      border-bottom: 2px solid #2563eb;
+    }
+
+    .month-content { display: none; }
+    .month-content.active { display: block; }
+
+    /* 변화 뱃지 */
+    .change-up { color: #16a34a; font-weight: 600; }
+    .change-down { color: #dc2626; font-weight: 600; }
+    .change-new { color: #2563eb; font-weight: 600; }
+    .change-none { color: var(--text-sub); }
+    .change-removed { color: #dc2626; font-weight: 600; }
+
+    @media (max-width: 640px) {
+      body { padding: 8px; }
+      .card { padding: 10px 10px; border-radius: 10px; margin-bottom: 10px; }
+      .portfolio-table th, .portfolio-table td { padding: 5px 6px; font-size: 12px; }
+      .summary-grid { grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+      .summary-item { padding: 8px 10px; }
+      .summary-label { font-size: 10px; }
+      .summary-value { font-size: 15px; }
+      .controls { flex-direction: column; margin-bottom: 6px; }
+      .search-box { width: 100%; padding: 6px 10px; }
+      h1 { font-size: 18px; }
+      .subtitle { margin-bottom: 10px; }
+      .section-title { font-size: 13px; margin-bottom: 6px; }
+      .section-caption { font-size: 11px; margin-bottom: 5px; }
+      .month-tab { padding: 5px 10px; font-size: 12px; }
+      .badge-etf, .badge-stock { font-size: 10px; padding: 1px 6px; }
+      header { margin-bottom: 8px !important; }
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -441,9 +352,7 @@
     <!-- 목표 비중 원형 차트 -->
     <section class="card">
       <h2 class="section-title">목표 비중 원형 차트</h2>
-      <p class="section-caption">
-        아래 차트는 현재 포트폴리오의 각 종목 목표 비중을 기준으로 그린 원형 그래프입니다.
-      </p>
+      <p class="section-caption">아래 차트는 현재 포트폴리오의 각 종목 목표 비중을 기준으로 그린 원형 그래프입니다.</p>
       <div class="chart-wrapper">
         <canvas id="weightPieChart"></canvas>
       </div>
@@ -452,12 +361,7 @@
     <!-- 메인 포트폴리오 표 -->
     <section class="card">
       <div class="controls">
-        <input 
-          type="text" 
-          class="search-box" 
-          id="searchInput" 
-          placeholder="종목명 또는 티커로 검색..."
-        />
+        <input type="text" class="search-box" id="searchInput" placeholder="종목명 또는 티커로 검색..." />
       </div>
       <div class="table-wrapper">
         <table class="portfolio-table">
@@ -469,892 +373,736 @@
               <th class="sortable" data-sort="weight">목표 비중</th>
             </tr>
           </thead>
-          <tbody id="portfolioTableBody">
-          </tbody>
+          <tbody id="portfolioTableBody"></tbody>
         </table>
       </div>
     </section>
 
-    <!-- 장기 목표 시나리오 그래프 -->
+    <!-- 장기 목표 시나리오 -->
     <section class="card">
       <h2 class="section-title">장기 목표 포트폴리오 시나리오 (예상)</h2>
       <p class="section-caption">
         2025년 말 약 4,000만 원에서 시작해 연 15% 수익률을 목표로 했을 때, 2060년까지의 대략적인 성장 시나리오입니다.
       </p>
       <p class="section-caption">
-        ※ 가정: 2025년 말 4,000만 원에서 시작, 2026~2029년까지 아래와 같이 추가 투자 후 2030년 이후에는 추가 투자 없이 연 15% 복리만 적용.
-        <br>· 2026년: 상반기 매 영업일 30만 원, 하반기 25만 원 → 연말 기준 약 6,900만 원
-        <br>· 2027년: 상반기 매 영업일 20만 원, 하반기 15만 원 → 연말 기준 약 4,400만 원
-        <br>· 2028년: 매 영업일 10만 원 → 연말 기준 약 2,500만 원
-        <br>· 2029년: 매 영업일 10만 원 → 연말 기준 약 2,500만 원
+        ※ 가정: 2025년 말 4,000만 원에서 시작, 2026~2029년까지 아래와 같이 추가 투자 후 2030년 이후에는 추가 투자 없이 연 15% 복리만 적용.<br>
+        · 2026년: 상반기 매 영업일 30만 원, 하반기 25만 원 → 연말 기준 약 6,900만 원<br>
+        · 2027년: 상반기 매 영업일 20만 원, 하반기 15만 원 → 연말 기준 약 4,400만 원<br>
+        · 2028년: 매 영업일 10만 원 → 연말 기준 약 2,500만 원<br>
+        · 2029년: 매 영업일 10만 원 → 연말 기준 약 2,500만 원
       </p>
-      <p class="section-caption">
-        ※ 4년 동안 총 약 1억 6천만 원을 추가로 투자하는 셈이며, 아래 그래프는 <strong>참고용 시나리오</strong>입니다.
-      </p>
-
+      <p class="section-caption">※ 4년 동안 총 약 1억 6천만 원을 추가로 투자하는 셈이며, 아래 그래프는 <strong>참고용 시나리오</strong>입니다.</p>
       <div class="chart-wrapper">
         <div class="scale-tabs">
-          <button type="button" class="scale-tab active" data-scale="linear">
-            일반 스케일
-          </button>
-          <button type="button" class="scale-tab" data-scale="log">
-            로그 스케일
-          </button>
+          <button type="button" class="scale-tab active" data-scale="linear">일반 스케일</button>
+          <button type="button" class="scale-tab" data-scale="log">로그 스케일</button>
         </div>
         <canvas id="projectionChart"></canvas>
       </div>
     </section>
-<section class="card">
-  <p class="section-caption" style="margin-top: 4px;">
-    ※ 2026년 목표: 포트폴리오 단순화 및 집중도를 높이기 위해 보유 종목 수를 현재 대비 2개 축소 예정
-  </p>
-</section>
 
-<section class="card">
-  <details class="inline-toggle">
-    <summary class="inline-toggle-summary">📌 포트폴리오 분석 요약 (보고서) 보기</summary>
-    <div class="toggle-body">
-  <p style="margin: 0 0 6px;"><strong>포트폴리오 분석 요약</strong> <span style="color: var(--text-sub);">· 2026년 2월 보고서</span></p>
+    <section class="card">
+      <p class="section-caption" style="margin-top: 4px;">
+        ※ 2026년 목표: 포트폴리오 단순화 및 집중도를 높이기 위해 보유 종목 수를 현재 대비 2개 축소 예정
+      </p>
+    </section>
 
-  <h3 style="margin: 14px 0 6px; font-size: 14px;">최신 포트폴리오 구성 (업데이트)</h3>
-  <div class="table-wrapper" style="margin-top:10px;">
-<table class="portfolio-table">
-<thead><tr>
-<th>구분</th>
-<th>1월</th>
-<th></th>
-<th>2월</th>
-<th>변화</th>
-</tr></thead><tbody>
-<tr>
-<td>SPY/VOO</td>
-<td>36%</td>
-<td>→</td>
-<td>36%</td>
-<td>변동 없음</td>
-</tr>
-<tr>
-<td>VWO</td>
-<td>5%</td>
-<td>→</td>
-<td>5.5%</td>
-<td>+0.5%p</td>
-</tr>
-<tr>
-<td>GLD</td>
-<td>5%</td>
-<td>→</td>
-<td>5.5%</td>
-<td>+0.5%p</td>
-</tr>
-<tr>
-<td>VEA</td>
-<td>2.5%</td>
-<td>→</td>
-<td>3%</td>
-<td>+0.5%p</td>
-</tr>
-<tr>
-<td>NVDA</td>
-<td>2%</td>
-<td>→</td>
-<td>2.5%</td>
-<td>+0.5%p</td>
-</tr>
-<tr>
-<td>XLF (신규)</td>
-<td>0%</td>
-<td>→</td>
-<td>2%</td>
-<td>+2%p</td>
-</tr>
-<tr>
-<td>QQQ</td>
-<td>3%</td>
-<td>→</td>
-<td>0%</td>
-<td>-3%p (제거)</td>
-</tr>
-<tr>
-<td>COIN</td>
-<td>1%</td>
-<td>→</td>
-<td>0%</td>
-<td>-1%p (제거)</td>
-</tr>
-<tr>
-<td>기타 ETF</td>
-<td>20%</td>
-<td>→</td>
-<td>20%</td>
-<td>변동 없음</td>
-</tr>
-<tr>
-<td>기타 개별주</td>
-<td>30.5%</td>
-<td>→</td>
-<td>30.5%</td>
-<td>변동 없음</td>
-</tr>
-</tbody></table></div>
-  <p style="margin: 10px 0 6px; font-weight: 600;">주요 변경사항</p>
-  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
-    <li>QQQ(나스닥 100) 완전 매각 (-3%)</li>
-    <li>COIN(코인베이스) 완전 매각 (-1%)</li>
-    <li>XLF(금융 섹터 ETF) 신규 편입 (+2%)</li>
-    <li>VWO, GLD, VEA, NVDA 각각 소폭 증액 (각 +0.5%p)</li>
-    <li>총 비중: 100% 유지</li>
-  </ul>
+    <!-- 월별 보고서 -->
+    <section class="card">
+      <details class="report-toggle">
+        <summary class="report-summary">📌 월별 포트폴리오 분석 보고서 보기</summary>
+        <div class="report-body">
 
-  <h3 style="margin: 16px 0 6px; font-size: 14px;">30년 시나리오 분석 </h3>
-  <div class="table-wrapper" style="margin-top:10px;">
-<table class="portfolio-table">
-<thead><tr>
-<th>시나리오</th>
-<th>연 수익률</th>
-<th>2055년 예상액</th>
-<th>목표 달성</th>
-</tr></thead><tbody>
-<tr>
-<td>공격적</td>
-<td>18%</td>
-<td>약 227억 원</td>
-<td>2.3배 달성</td>
-</tr>
-<tr>
-<td>기준</td>
-<td>15%</td>
-<td>약 109억 원</td>
-<td>목표 달성 ✓</td>
-</tr>
-<tr>
-<td>보수적</td>
-<td>12%</td>
-<td>약 51억 원</td>
-<td>목표 미달</td>
-</tr>
-</tbody></table></div>
+          <!-- 월 탭 -->
+          <div class="month-tabs">
+            <button type="button" class="month-tab" data-month="jan">1월</button>
+            <button type="button" class="month-tab" data-month="feb">2월</button>
+            <button type="button" class="month-tab active" data-month="mar">3월 ✦</button>
+          </div>
 
-  <h3 style="margin: 16px 0 6px; font-size: 14px;">핵심 인사이트</h3>
-
-  <p style="margin: 10px 0 6px; font-weight: 600;">1) 2월 리밸런싱 의도</p>
-  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
-    <li>기술주 과집중 완화: QQQ 제거로 나스닥 100 중복 노출 제거</li>
-    <li>섹터 다각화: XLF 편입으로 금융 섹터 노출 확보 (밸류 요소 추가)</li>
-    <li>방어 자산 강화: GLD(금), VWO(신흥국), VEA(선진국) 증액으로 변동성 대응력 향상</li>
-    <li>핵심 성장주 집중: NVDA 비중 확대로 AI 테마 강화</li>
-  </ul>
-
-  <p style="margin: 12px 0 6px; font-weight: 600;">2) 15% 수익률 달성 전략</p>
-  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
-    <li>S&P 500(36%)의 10~11% + 성장주(28%)의 20%+ 조합으로 평균 15% 가능</li>
-    <li>XLF 추가로 금융주 사이클 업턴 시 추가 수익 기대 (연 10~15%)</li>
-    <li>NVDA 비중 확대(+0.5%p)로 AI 성장 수혜 극대화</li>
-    <li>분산 투자 개선으로 하방 리스크 축소 → 장기 복리 효과 증대</li>
-  </ul>
-
-  <p style="margin: 12px 0 6px; font-weight: 600;">3) 리스크 관리</p>
-  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
-    <li>기술주 집중도는 여전히 높지만 QQQ 제거로 중복 노출 완화</li>
-    <li>금융(XLF 2%) + 금(GLD 5.5%)으로 방어적 포지션 강화</li>
-    <li>신흥국(VWO 5.5%) + 선진국(VEA 3%) 증액으로 지역 분산 개선</li>
-    <li>COIN 매각으로 고변동성 암호화폐 관련주 노출 제거 (BTC는 유지)</li>
-  </ul>
-
-  <h3 style="margin: 16px 0 6px; font-size: 14px;">종합 평가</h3>
-  <p style="margin: 0 0 6px;"><strong>평가 점수:</strong> 8.7/10 <span style="color: #10b981;">▲ +0.2</span></p>
-  <p style="margin: 0 0 6px; color: var(--text-sub);">섹터 다각화(XLF) 및 방어 자산 강화로 평가 점수가 8.5에서 8.7로 상승했습니다.</p>
-
-  <p style="margin: 12px 0 6px; font-weight: 600;">목표 달성 가능성</p>
-  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
-    <li>연 15% 목표 달성 확률: 약 65~70% (1월 대비 소폭 개선)</li>
-    <li>기술주 + 금융주 조합으로 경기 사이클 대응력 향상</li>
-    <li>분산 개선으로 최대 손실폭 축소 예상 (-35% → -30%)</li>
-    <li>규율 있는 월간 리밸런싱 유지 시 목표 달성 가능성 높음</li>
-  </ul>
-  </ul>
-
-  <h3 style="margin: 16px 0 6px; font-size: 14px;">2월 리밸런싱 후 남은 과제</h3>
-
-  <p style="margin: 10px 0 6px; font-weight: 600;">1) 고비용 ETF 재검토 (진행 중)</p>
-  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
-    <li>ARKQ(0.75%), TAN(0.70%), GRID(0.63%)는 여전히 높은 비용 부담</li>
-    <li>3월 리밸런싱: 이 중 1~2개를 저비용 대안 또는 개별주로 대체 검토</li>
-    <li>후보: VGT(기술 ETF, 0.10%), XLE(에너지 ETF, 0.09%) 등</li>
-  </ul>
-
-  <p style="margin: 12px 0 6px; font-weight: 600;">2) 섹터 다각화 (완료 ✓)</p>
-  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
-    <li>XLF 2% 추가로 금융 섹터 노출 확보 완료</li>
-    <li>현재 섹터 구성: 기술 55~60%, 금융 2%, 헬스케어 2%, 에너지 3%, 원자재 5.5%</li>
-    <li>향후 과제: 소비재(XLP, XLY) 또는 헬스케어(XLV) 추가 검토</li>
-  </ul>
-
-  <p style="margin: 12px 0 6px; font-weight: 600;">3) 3월 리밸런싱 방향</p>
-  <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
-    <li>고비용 ETF 1~2개 정리 (ARKQ 또는 TAN 후보)</li>
-    <li>소비재/헬스케어 섹터 ETF 소폭 추가 검토 (1~2%)</li>
-    <li>개별 성장주 재평가 (TEM, RKLB 등 저비중 종목 정리 고려)</li>
-    <li>월간 리밸런싱 루틴 정착 (목표 비중 ±3%p 기준)</li>
-  </ul>
-
-  <p style="margin: 14px 0 0; font-weight: 600;">성공의 핵심</p>
-  <p style="margin: 4px 0 0; color: var(--text-sub);">매월 작은 개선을 통한 점진적 포트폴리오 최적화 + 시장 변동성에 흔들리지 않는 장기 투자 원칙</p>
-</div>
-  </details>
-</section>
-
-</div>
-
-<script>
-  // 포트폴리오 데이터
-  const portfolioData = [
-    { name: "SPY / VOO (S&P 500)", ticker: "SPY / VOO", type: "etf", typeLabel: "ETF · 지수", weight: 36, etfKey: "SPY_VOO" },
-    { name: "알파벳 A", ticker: "GOOGL", type: "stock", typeLabel: "개별주", weight: 5.5 },
-    { name: "GLD", ticker: "GLD", type: "etf", typeLabel: "ETF · 원자재", weight: 5.5, etfKey: "GLD" },
-    { name: "VWO", ticker: "VWO", type: "etf", typeLabel: "ETF · 신흥국", weight: 5.5, etfKey: "VWO" },
-    { name: "JEPQ", ticker: "JEPQ", type: "etf", typeLabel: "ETF · 배당/옵션", weight: 4, etfKey: "JEPQ" },
-    { name: "XAR", ticker: "XAR", type: "etf", typeLabel: "ETF · 항공/방산", weight: 4, etfKey: "XAR" },
-    { name: "테슬라", ticker: "TSLA", type: "stock", typeLabel: "개별주", weight: 3.5 },
-    { name: "팔란티어", ticker: "PLTR", type: "stock", typeLabel: "개별주", weight: 3 },
-    { name: "QTUM", ticker: "QTUM", type: "etf", typeLabel: "ETF · 퀀텀/머신러닝", weight: 3, etfKey: "QTUM" },
-    { name: "GRID", ticker: "GRID", type: "etf", typeLabel: "ETF · 전력 인프라", weight: 3, etfKey: "GRID" },
-    { name: "VEA", ticker: "VEA", type: "etf", typeLabel: "ETF · 선진국(미국 제외)", weight: 3, etfKey: "VEA" },
-    { name: "TAN", ticker: "TAN", type: "etf", typeLabel: "ETF · 태양광", weight: 2.5, etfKey: "TAN" },
-    { name: "엔비디아", ticker: "NVDA", type: "stock", typeLabel: "개별주", weight: 2.5 },
-    { name: "애플", ticker: "AAPL", type: "stock", typeLabel: "개별주", weight: 2 },
-    { name: "마이크로소프트", ticker: "MSFT", type: "stock", typeLabel: "개별주", weight: 2 },
-    { name: "아마존", ticker: "AMZN", type: "stock", typeLabel: "개별주", weight: 2 },
-    { name: "일라이 릴리", ticker: "LLY", type: "stock", typeLabel: "개별주", weight: 2 },
-    { name: "메타", ticker: "META", type: "stock", typeLabel: "개별주", weight: 2 },
-    { name: "ARKQ", ticker: "ARKQ", type: "etf", typeLabel: "ETF · 혁신/로봇", weight: 2, etfKey: "ARKQ" },
-    { name: "XLF", ticker: "XLF", type: "etf", typeLabel: "ETF · 금융", weight: 2, etfKey: "XLF" },
-    { name: "아이온큐", ticker: "IONQ", type: "stock", typeLabel: "개별주", weight: 1.5 },
-    { name: "브로드컴", ticker: "AVGO", type: "stock", typeLabel: "개별주", weight: 1.5 },
-    { name: "템퍼스 AI", ticker: "TEM", type: "stock", typeLabel: "개별주", weight: 1 },
-    { name: "로켓랩", ticker: "RKLB", type: "stock", typeLabel: "개별주", weight: 1 }
-  ];
-
-  // ETF 상세 정보
-  const etfDetails = {
-    SPY_VOO: {
-      fullName: "SPY / VOO",
-      ticker: "SPY · VOO",
-      description: "미국 대형주 500개로 구성된 S&P 500 지수를 추종하는 대표 지수 ETF들. 미국 주식 시장 전체의 성장을 넓게 가져가는 역할을 하는 코어 자산.",
-      meta: "운용 보수는 대략 연 0.03~0.09% 수준(상품별 상이). 상위 보유 종목은 NVIDIA, Apple, Microsoft, Amazon, Alphabet 등이 대표적."
-    },
-    XLF: {
-      fullName: "Financial Select Sector SPDR Fund",
-      ticker: "XLF",
-      description: "S&P 500에 포함된 금융 섹터 종목에 집중 투자하는 ETF. 대형 은행, 보험, 증권, 자산운용사 등에 고루 분산 투자.",
-      meta: "운용 보수: 대략 연 0.09% 수준. 상위 보유 종목 (예시, 약 비중):",
-      holdings: [
-        { symbol: "BRK.B", name: "Berkshire Hathaway (BRK.B)", weight: "약 13%" },
-        { symbol: "JPM", name: "JPMorgan Chase (JPM)", weight: "약 10%" },
-        { symbol: "V", name: "Visa (V)", weight: "약 7.5%" },
-        { symbol: "MA", name: "Mastercard (MA)", weight: "약 6%" },
-        { symbol: "BAC", name: "Bank of America (BAC)", weight: "약 5%" }
-      ]
-    },
-    GLD: {
-      fullName: "SPDR Gold Shares",
-      ticker: "GLD",
-      description: "금 현물(골드 바)에 직접 투자하는 물리적 금 ETF. 금 가격을 수수료 차감 후 최대한 그대로 따라가는 것을 목표로 함.",
-      meta: "운용 보수는 대략 연 0.40% 안팎. 기초자산은 런던 금괴시장 규격에 맞는 금 바 100%에 가까운 비중."
-    },
-    JEPQ: {
-      fullName: "JPMorgan Nasdaq Equity Premium Income",
-      ticker: "JEPQ",
-      description: "나스닥 성장주에 투자하면서 콜옵션 전략을 활용해 프리미엄(분배금)을 노리는 ETF.",
-      meta: "운용 보수는 대략 연 0.35~0.40%대."
-    },
-    XAR: {
-      fullName: "SPDR S&P Aerospace & Defense ETF",
-      ticker: "XAR",
-      description: "항공·방위산업 섹터에 집중 투자하는 ETF.",
-      meta: "운용 보수: 연 0.35% 수준. 상위 보유 종목 (예시, 비중은 2026-01 기준 대략):",
-      holdings: [
-        { symbol: "KARMAN", name: "Karman Holdings", weight: "약 4.6%" },
-        { symbol: "KTOS", name: "Kratos Defense (KTOS)", weight: "약 4.5%" },
-        { symbol: "RKLB", name: "Rocket Lab (RKLB)", weight: "약 4.4%" },
-        { symbol: "AVAV", name: "AeroVironment (AVAV)", weight: "약 4.3%" },
-        { symbol: "LMT", name: "Lockheed Martin (LMT)", weight: "약 3.4%" }
-      ]
-    },
-    ARKQ: {
-      fullName: "ARK Autonomous Tech & Robotics ETF",
-      ticker: "ARKQ",
-      description: "자율주행, 로봇, 드론, 우주, 산업 자동화 등 테마에 집중하는 액티브 ETF.",
-      meta: "운용 보수: 연 0.75% 수준. 상위 보유 종목 (예시, 비중은 시점에 따라 변동):",
-      holdings: [
-        { symbol: "TSLA", name: "Tesla (TSLA)", weight: "약 10%" },
-        { symbol: "KTOS", name: "Kratos Defense (KTOS)", weight: "약 10%" },
-        { symbol: "TER", name: "Teradyne (TER)", weight: "약 9~10%" },
-        { symbol: "RKLB", name: "Rocket Lab (RKLB)", weight: "약 6%" }
-      ]
-    },
-    QTUM: {
-      fullName: "Defiance Quantum ETF",
-      ticker: "QTUM",
-      description: "양자컴퓨팅 및 머신러닝 관련 기업에 투자하는 테마형 ETF.",
-      meta: "운용 보수: 대략 연 0.40% 수준. 상위 보유 종목 (예시, 약 비중):",
-      holdings: [
-        { symbol: "QNC", name: "Quantum eMotion (QNC)", weight: "약 2%" },
-        { symbol: "MU", name: "Micron Technology (MU)", weight: "약 1.6%" },
-        { symbol: "LRCX", name: "Lam Research (LRCX)", weight: "약 1.5%" },
-        { symbol: "ONTO", name: "Onto Innovation (ONTO)", weight: "약 1.5%" },
-        { symbol: "KLAC", name: "KLA (KLAC)", weight: "약 1.5%" }
-      ]
-    },
-    VWO: {
-      fullName: "Vanguard FTSE Emerging Markets ETF",
-      ticker: "VWO",
-      description: "FTSE Emerging Markets 지수를 추종하는 대표 신흥국 주식 ETF.",
-      meta: "운용 보수: 대략 연 0.07% 수준. 상위 보유 종목 (예시, 약 비중):",
-      holdings: [
-        { symbol: "TSMC", name: "TSMC (2330.TW / TSM)", weight: "약 11%" },
-        { symbol: "TENCENT", name: "Tencent (0700.HK)", weight: "약 4~5%" },
-        { symbol: "BABA", name: "Alibaba (9988.HK)", weight: "약 3%" },
-        { symbol: "HDFCBANK", name: "HDFC Bank", weight: "약 1.1%" },
-        { symbol: "RELIANCE", name: "Reliance Industries", weight: "약 1.1%" }
-      ]
-    },
-    GRID: {
-      fullName: "First Trust Nasdaq Clean Edge Smart Grid Infra",
-      ticker: "GRID",
-      description: "스마트 그리드·전력 인프라 관련 기업에 집중 투자하는 ETF.",
-      meta: "운용 보수: 연 0.63% 수준. 상위 보유 종목 (예시, 약 비중):",
-      holdings: [
-        { symbol: "ABB", name: "ABB Ltd", weight: "약 8%" },
-        { symbol: "NG", name: "National Grid", weight: "약 8%" },
-        { symbol: "SCHNEIDER", name: "Schneider Electric", weight: "약 8%" },
-        { symbol: "JCI", name: "Johnson Controls", weight: "약 7~8%" },
-        { symbol: "ETN", name: "Eaton", weight: "약 7%" }
-      ]
-    },
-    TAN: {
-      fullName: "Invesco Solar ETF",
-      ticker: "TAN",
-      description: "전 세계 태양광 에너지 기업에 집중 투자하는 섹터 ETF.",
-      meta: "운용 보수: 대략 연 0.70% 수준. 상위 보유 종목 (예시, 약 비중):",
-      holdings: [
-        { symbol: "FSLR", name: "First Solar (FSLR)", weight: "약 10%" },
-        { symbol: "NXT", name: "Nextracker (NXT)", weight: "약 10%" },
-        { symbol: "RUN", name: "Sunrun (RUN)", weight: "약 7%" },
-        { symbol: "ENPH", name: "Enphase Energy (ENPH)", weight: "약 6%" }
-      ]
-    },
-    VEA: {
-      fullName: "Vanguard FTSE Developed Markets ETF",
-      ticker: "VEA",
-      description: "미국을 제외한 선진국 주식에 분산 투자하는 ETF.",
-      meta: "운용 보수: 대략 연 0.03% 수준. 상위 보유 종목 (예시, 약 비중):",
-      holdings: [
-        { symbol: "ASML", name: "ASML", weight: "약 1.5%" },
-        { symbol: "SAMSUNG", name: "Samsung Electronics", weight: "약 1.2%" },
-        { symbol: "AZN", name: "AstraZeneca", weight: "약 1.0%" },
-        { symbol: "ROCHE", name: "Roche", weight: "약 1.0% 내외" }
-      ]
-    }
-  };
-
-  // 보유 종목 설명
-  const holdingDescriptions = {
-    XAR: {
-      KARMAN: "Karman Holdings: 항공우주 부품·서비스 업체로, 민간/군용 항공기와 우주 관련 부품을 공급.",
-      KTOS: "Kratos Defense (KTOS): 무인기(UAV), 위성 통신, 방산 시스템을 만드는 미국 방위산업 회사.",
-      RKLB: "Rocket Lab (RKLB): 소형 위성을 위한 로켓 발사 서비스와 위성 플랫폼을 제공하는 뉴질랜드/미국 우주 기업.",
-      AVAV: "AeroVironment (AVAV): 소형 무인기·미사일 시스템을 만드는 방산 업체로, 정찰 드론에 강점.",
-      LMT: "Lockheed Martin (LMT): F-35 전투기, 미사일, 우주 시스템 등 다양한 방산 장비를 생산하는 글로벌 1위급 방산 기업."
-    },
-    ARKQ: {
-      TSLA: "Tesla (TSLA): 전기차, 에너지 저장, 자율주행 소프트웨어를 중심으로 하는 대표 성장주.",
-      KTOS: "Kratos Defense: 저가·효율적인 무인기·방산 솔루션으로 ARK가 자주 담는 방산 성장주.",
-      TER: "Teradyne (TER): 반도체·전자 테스트 장비를 만드는 회사로, 공장 자동화(로봇) 사업도 함께 영위.",
-      RKLB: "Rocket Lab: 소형 위성 발사 및 우주 인프라 플랫폼 기업으로, ARKQ의 우주 테마 핵심 보유주 중 하나."
-    },
-    QTUM: {
-      QNC: "Quantum eMotion (QNC): 양자 난수 생성 기술 등 보안용 양자기술을 연구·개발하는 캐나다 기업.",
-      MU: "Micron (MU): 메모리 반도체(DRAM, NAND) 대형 제조사로, 데이터센터·AI·모바일 수요에 노출.",
-      LRCX: "Lam Research (LRCX): 반도체 제조용 식각·증착 장비 분야 글로벌 선두 업체.",
-      ONTO: "Onto Innovation (ONTO): 반도체 공정 검사·계측 장비 회사로, 웨이퍼 검사 솔루션에 강점.",
-      KLAC: "KLA (KLAC): 반도체 공정 제어·검사 장비 글로벌 강자. 수율 관리와 공정 안정화에 필수 솔루션을 제공."
-    },
-    VWO: {
-      TSMC: "TSMC: 세계 최대 파운드리(반도체 위탁생산) 업체. 고급 공정(3nm 등)에서 압도적인 점유율을 가짐.",
-      TENCENT: "Tencent: 위챗, 게임, 핀테크, 클라우드 등 중국 디지털 생태계를 이끄는 빅테크 기업.",
-      BABA: "Alibaba: 전자상거래(타오바오·티몰), 클라우드(알리바바 클라우드) 등을 가진 중국 빅테크.",
-      HDFCBANK: "HDFC Bank: 인도 대형 민간 은행으로, 소매·기업 금융 모두에서 인도 성장에 레버리지.",
-      RELIANCE: "Reliance Industries: 인도 대형 복합기업. 에너지·리테일·통신(Jio) 등 여러 성장 축을 보유."
-    },
-    GRID: {
-      ABB: "ABB: 전력·자동화·로봇 등 산업 인프라 솔루션을 제공하는 스위스 기반 글로벌 기업.",
-      NG: "National Grid: 영국·미국에서 송배전망을 운영하는 전력 유틸리티.",
-      SCHNEIDER: "Schneider Electric: 전력 관리·자동화 솔루션 글로벌 리더. 빌딩·데이터센터·산업용 전력 관리에 강점.",
-      JCI: "Johnson Controls: 빌딩 관리 시스템, HVAC, 스마트 빌딩 솔루션을 제공하는 미국 기업.",
-      ETN: "Eaton: 전력 관리, 배전 장비, 산업용 부품을 생산하는 글로벌 전력 인프라 기업."
-    },
-    TAN: {
-      FSLR: "First Solar (FSLR): 박막(Thin-film) 태양광 모듈을 만드는 미국 업체. 유틸리티급 발전소 중심.",
-      NXT: "Nextracker (NXT): 태양광 패널을 태양 방향으로 움직여 효율을 높이는 트래커 시스템 전문 회사.",
-      RUN: "Sunrun (RUN): 미국 주택용 태양광 설치 및 금융 솔루션 제공 업체.",
-      ENPH: "Enphase Energy (ENPH): 태양광용 마이크로 인버터, 에너지 저장 시스템 등을 만드는 파워 일렉트로닉스 기업."
-    },
-    VEA: {
-      ASML: "ASML: 극자외선(EUV) 노광 장비를 사실상 독점 공급하는 네덜란드 반도체 장비 회사.",
-      SAMSUNG: "Samsung Electronics: 메모리·모바일·가전 등 다각화된 사업을 가진 한국 대표 IT 대형주.",
-      AZN: "AstraZeneca: 영국-스웨덴계 글로벌 제약사. 항암·면역질환 등 혁신 신약 파이프라인을 보유.",
-      ROCHE: "Roche: 스위스 제약·진단 기업으로, 항암제와 진단장비에서 세계적인 경쟁력을 보유."
-    },
-    XLF: {
-      "BRK.B": "Berkshire Hathaway (BRK.B): 워런 버핏의 복합 기업. 보험, 철도, 에너지, 제조 등 다각화된 사업 포트폴리오를 보유.",
-      JPM: "JPMorgan Chase (JPM): 미국 최대 은행 중 하나. 투자은행, 자산관리, 소매금융 등 종합 금융 서비스 제공.",
-      V: "Visa (V): 글로벌 카드 결제 네트워크 1위. 전 세계 결제 인프라를 장악한 핀테크 기업.",
-      MA: "Mastercard (MA): 글로벌 카드 결제 네트워크 2위. Visa와 함께 디지털 결제 생태계를 주도.",
-      BAC: "Bank of America (BAC): 미국 2위 은행. 소매·기업·투자은행 전 영역에서 강력한 입지."
-    }
-  };
-
-  let currentSort = { column: null, direction: 'asc' };
-  let filteredData = [...portfolioData];
-
-  document.addEventListener("DOMContentLoaded", function () {
-    updateSummary();
-    renderPortfolioTable();
-    renderPieChart();
-    renderProjectionChart();
-    setupEventListeners();
-  });
-
-  // 요약 정보 업데이트
-  function updateSummary() {
-    const total = portfolioData.length;
-    const etfItems = portfolioData.filter(item => item.type === 'etf');
-    const stockItems = portfolioData.filter(item => item.type === 'stock');
-    
-    const etfWeight = etfItems.reduce((sum, item) => sum + item.weight, 0);
-    const stockWeight = stockItems.reduce((sum, item) => sum + item.weight, 0);
-    const totalWeight = etfWeight + stockWeight;
-
-    document.getElementById('totalCount').textContent = total + '개';
-    document.getElementById('etfWeight').textContent = etfWeight.toFixed(1) + '%';
-    document.getElementById('stockWeight').textContent = stockWeight.toFixed(1) + '%';
-    document.getElementById('totalWeight').textContent = totalWeight.toFixed(1) + '%';
-  }
-
-  // 포트폴리오 테이블 렌더링
-  function renderPortfolioTable() {
-    const tbody = document.getElementById('portfolioTableBody');
-    tbody.innerHTML = '';
-
-    filteredData.forEach((item) => {
-      const tr = document.createElement('tr');
-      if (item.etfKey) {
-        tr.className = 'etf-row';
-        tr.dataset.etf = item.etfKey;
-      }
-
-      const nameCell = document.createElement('td');
-      if (item.etfKey) {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'etf-link';
-        btn.textContent = item.name;
-        nameCell.appendChild(btn);
-      } else {
-        nameCell.textContent = item.name;
-      }
-
-      const tickerCell = document.createElement('td');
-      tickerCell.className = 'ticker';
-      tickerCell.textContent = item.ticker;
-
-      const typeCell = document.createElement('td');
-      const badge = document.createElement('span');
-      badge.className = item.type === 'etf' ? 'badge-etf' : 'badge-stock';
-      badge.textContent = item.typeLabel;
-      typeCell.appendChild(badge);
-
-      const weightCell = document.createElement('td');
-      weightCell.className = 'weight-cell';
-      weightCell.textContent = item.weight + '%';
-
-      tr.appendChild(nameCell);
-      tr.appendChild(tickerCell);
-      tr.appendChild(typeCell);
-      tr.appendChild(weightCell);
-      tbody.appendChild(tr);
-
-      // ETF 상세 행
-      if (item.etfKey && etfDetails[item.etfKey]) {
-        const detailTr = document.createElement('tr');
-        detailTr.className = 'etf-detail-row';
-        detailTr.dataset.etfDetail = item.etfKey;
-        detailTr.style.display = 'none';
-
-        const detailTd = document.createElement('td');
-        detailTd.colSpan = 4;
-
-        const detail = etfDetails[item.etfKey];
-        let detailHTML = `
-          <div class="etf-detail">
-            <div class="etf-detail-header">
-              <span class="etf-detail-name">${detail.fullName}</span>
-              <span class="etf-detail-ticker">${detail.ticker}</span>
+          <!-- 1월 -->
+          <div class="month-content" id="report-jan">
+            <p style="margin: 0 0 6px;"><strong>포트폴리오 분석 요약</strong> <span style="color: var(--text-sub);">· 2026년 1월</span></p>
+            <p style="font-size: 13px; color: var(--text-sub); line-height: 1.6;">
+              1월 기준 포트폴리오는 SPY/VOO 36% 코어 중심으로 구성되었으며, QQQ(3%), COIN(1%) 등이 포함된 시점입니다.<br>
+              2월 리밸런싱을 통해 QQQ·COIN을 정리하고 XLF를 신규 편입하였습니다. 상세 변경 내역은 2월 탭을 참조하세요.
+            </p>
+            <div class="table-wrapper" style="margin-top:12px;">
+              <table class="portfolio-table">
+                <thead><tr><th>주요 구성</th><th>비중</th></tr></thead>
+                <tbody>
+                  <tr><td>SPY / VOO (S&amp;P 500)</td><td>36%</td></tr>
+                  <tr><td>알파벳 A (GOOGL)</td><td>5.5%</td></tr>
+                  <tr><td>GLD</td><td>5%</td></tr>
+                  <tr><td>VWO</td><td>5%</td></tr>
+                  <tr><td>QQQ (→ 2월 제거)</td><td>3%</td></tr>
+                  <tr><td>COIN (→ 2월 제거)</td><td>1%</td></tr>
+                  <tr><td>기타</td><td>44.5%</td></tr>
+                </tbody>
+              </table>
             </div>
-            <p class="etf-detail-desc">${detail.description}</p>
-            <p class="etf-detail-meta">${detail.meta}</p>
-        `;
+          </div>
 
-        if (detail.holdings && detail.holdings.length > 0) {
-          detailHTML += '<ul class="etf-detail-holdings" data-etf="' + item.etfKey + '">';
-          detail.holdings.forEach(h => {
-            detailHTML += `<li><button type="button" class="holding-link" data-etf="${item.etfKey}" data-symbol="${h.symbol}">${h.name} — ${h.weight}</button></li>`;
-          });
-          detailHTML += '</ul>';
-          detailHTML += '<div class="holding-info" data-etf="' + item.etfKey + '"></div>';
-        }
+          <!-- 2월 -->
+          <div class="month-content" id="report-feb">
+            <p style="margin: 0 0 6px;"><strong>포트폴리오 분석 요약</strong> <span style="color: var(--text-sub);">· 2026년 2월 보고서</span></p>
 
-        detailHTML += '</div>';
-        detailTd.innerHTML = detailHTML;
-        detailTr.appendChild(detailTd);
-        tbody.appendChild(detailTr);
-      }
-    });
+            <h3 style="margin: 14px 0 6px; font-size: 14px;">포트폴리오 변경 내역 (1월 → 2월)</h3>
+            <div class="table-wrapper" style="margin-top:10px;">
+              <table class="portfolio-table">
+                <thead><tr><th>구분</th><th>1월</th><th></th><th>2월</th><th>변화</th></tr></thead>
+                <tbody>
+                  <tr><td>SPY/VOO</td><td>36%</td><td>→</td><td>36%</td><td class="change-none">변동 없음</td></tr>
+                  <tr><td>VWO</td><td>5%</td><td>→</td><td>5.5%</td><td class="change-up">+0.5%p</td></tr>
+                  <tr><td>GLD</td><td>5%</td><td>→</td><td>5.5%</td><td class="change-up">+0.5%p</td></tr>
+                  <tr><td>VEA</td><td>2.5%</td><td>→</td><td>3%</td><td class="change-up">+0.5%p</td></tr>
+                  <tr><td>NVDA</td><td>2%</td><td>→</td><td>2.5%</td><td class="change-up">+0.5%p</td></tr>
+                  <tr><td>XLF (신규)</td><td>0%</td><td>→</td><td>2%</td><td class="change-new">+2%p (신규)</td></tr>
+                  <tr><td>QQQ</td><td>3%</td><td>→</td><td>0%</td><td class="change-removed">-3%p (제거)</td></tr>
+                  <tr><td>COIN</td><td>1%</td><td>→</td><td>0%</td><td class="change-removed">-1%p (제거)</td></tr>
+                  <tr><td>기타 ETF</td><td>20%</td><td>→</td><td>20%</td><td class="change-none">변동 없음</td></tr>
+                  <tr><td>기타 개별주</td><td>30.5%</td><td>→</td><td>30.5%</td><td class="change-none">변동 없음</td></tr>
+                </tbody>
+              </table>
+            </div>
 
-    // ETF 토글 이벤트
-    document.querySelectorAll('.etf-row .etf-link').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const row = btn.closest('.etf-row');
-        const key = row.dataset.etf;
-        const detailRow = document.querySelector('.etf-detail-row[data-etf-detail="' + key + '"]');
-        if (!detailRow) return;
+            <p style="margin: 12px 0 6px; font-weight: 600;">주요 변경사항</p>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>QQQ(나스닥 100) 완전 매각 (-3%)</li>
+              <li>COIN(코인베이스) 완전 매각 (-1%)</li>
+              <li>XLF(금융 섹터 ETF) 신규 편입 (+2%)</li>
+              <li>VWO, GLD, VEA, NVDA 각각 소폭 증액 (각 +0.5%p)</li>
+              <li>총 비중: 100% 유지</li>
+            </ul>
 
-        const isVisible = detailRow.style.display === 'table-row';
-        document.querySelectorAll('.etf-detail-row').forEach(r => r.style.display = 'none');
-        detailRow.style.display = isVisible ? 'none' : 'table-row';
-      });
-    });
+            <h3 style="margin: 16px 0 6px; font-size: 14px;">핵심 인사이트</h3>
+            <p style="margin: 10px 0 6px; font-weight: 600;">1) 2월 리밸런싱 의도</p>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>기술주 과집중 완화: QQQ 제거로 나스닥 100 중복 노출 제거</li>
+              <li>섹터 다각화: XLF 편입으로 금융 섹터 노출 확보 (밸류 요소 추가)</li>
+              <li>방어 자산 강화: GLD(금), VWO(신흥국), VEA(선진국) 증액으로 변동성 대응력 향상</li>
+              <li>핵심 성장주 집중: NVDA 비중 확대로 AI 테마 강화</li>
+            </ul>
 
-    // 보유 종목 설명 토글
-    document.querySelectorAll('.holding-link').forEach(link => {
-      link.addEventListener('click', function() {
-        const etf = this.dataset.etf;
-        const symbol = this.dataset.symbol;
-        const infoBox = document.querySelector('.holding-info[data-etf="' + etf + '"]');
-        if (!infoBox) return;
+            <p style="margin: 12px 0 6px; font-weight: 600;">2) 15% 수익률 달성 전략</p>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>S&amp;P 500(36%)의 10~11% + 성장주(28%)의 20%+ 조합으로 평균 15% 가능</li>
+              <li>XLF 추가로 금융주 사이클 업턴 시 추가 수익 기대 (연 10~15%)</li>
+              <li>NVDA 비중 확대(+0.5%p)로 AI 성장 수혜 극대화</li>
+              <li>분산 투자 개선으로 하방 리스크 축소 → 장기 복리 효과 증대</li>
+            </ul>
 
-        const byEtf = holdingDescriptions[etf] || {};
-        const desc = byEtf[symbol];
+            <p style="margin: 12px 0 6px; font-weight: 600;">3) 리스크 관리</p>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>기술주 집중도는 여전히 높지만 QQQ 제거로 중복 노출 완화</li>
+              <li>금융(XLF 2%) + 금(GLD 5.5%)으로 방어적 포지션 강화</li>
+              <li>신흥국(VWO 5.5%) + 선진국(VEA 3%) 증액으로 지역 분산 개선</li>
+              <li>COIN 매각으로 고변동성 암호화폐 관련주 노출 제거 (BTC는 유지)</li>
+            </ul>
 
-        if (desc) {
-          infoBox.textContent = desc;
-        } else {
-          infoBox.textContent = this.textContent.replace(/\s+—.+$/, '') + " : 상세 설명은 아직 정리되지 않았습니다.";
-        }
-      });
-    });
-  }
+            <h3 style="margin: 16px 0 6px; font-size: 14px;">종합 평가</h3>
+            <p style="margin: 0 0 6px;"><strong>평가 점수:</strong> 8.7/10 <span style="color: #10b981;">▲ +0.2</span></p>
+            <p style="margin: 0 0 6px; color: var(--text-sub);">섹터 다각화(XLF) 및 방어 자산 강화로 평가 점수가 8.5에서 8.7로 상승했습니다.</p>
 
-  // 이벤트 리스너 설정
-  function setupEventListeners() {
-    // 검색
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', function(e) {
-      const query = e.target.value.toLowerCase();
-      filteredData = portfolioData.filter(item => 
-        item.name.toLowerCase().includes(query) || 
-        item.ticker.toLowerCase().includes(query)
-      );
-      renderPortfolioTable();
-    });
+            <p style="margin: 12px 0 6px; font-weight: 600;">목표 달성 가능성</p>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>연 15% 목표 달성 확률: 약 65~70% (1월 대비 소폭 개선)</li>
+              <li>기술주 + 금융주 조합으로 경기 사이클 대응력 향상</li>
+              <li>분산 개선으로 최대 손실폭 축소 예상 (-35% → -30%)</li>
+              <li>규율 있는 월간 리밸런싱 유지 시 목표 달성 가능성 높음</li>
+            </ul>
 
-    // 정렬
-    document.querySelectorAll('.sortable').forEach(th => {
-      th.addEventListener('click', function() {
-        const column = this.dataset.sort;
-        
-        if (currentSort.column === column) {
-          currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
-        } else {
-          currentSort.column = column;
-          currentSort.direction = 'asc';
-        }
+            <h3 style="margin: 16px 0 6px; font-size: 14px;">30년 시나리오 분석</h3>
+            <div class="table-wrapper" style="margin-top:10px;">
+              <table class="portfolio-table">
+                <thead><tr><th>시나리오</th><th>연 수익률</th><th>2055년 예상액</th><th>목표 달성</th></tr></thead>
+                <tbody>
+                  <tr><td>공격적</td><td>18%</td><td>약 227억 원</td><td>2.3배 달성</td></tr>
+                  <tr><td>기준</td><td>15%</td><td>약 109억 원</td><td>목표 달성 ✓</td></tr>
+                  <tr><td>보수적</td><td>12%</td><td>약 51억 원</td><td>목표 미달</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-        sortData(column, currentSort.direction);
-        updateSortIndicators();
-        renderPortfolioTable();
-      });
-    });
-  }
+          <!-- 3월 -->
+          <div class="month-content active" id="report-mar">
+            <p style="margin: 0 0 6px;"><strong>포트폴리오 분석 요약</strong> <span style="color: var(--text-sub);">· 2026년 3월 보고서</span></p>
 
-  // 데이터 정렬
-  function sortData(column, direction) {
-    filteredData.sort((a, b) => {
-      let valA, valB;
+            <h3 style="margin: 14px 0 6px; font-size: 14px;">포트폴리오 변경 내역 (2월 → 3월)</h3>
+            <div class="table-wrapper" style="margin-top:10px;">
+              <table class="portfolio-table">
+                <thead><tr><th>구분</th><th>2월</th><th></th><th>3월</th><th>변화</th></tr></thead>
+                <tbody>
+                  <tr><td>ARKQ</td><td>2%</td><td>→</td><td>0%</td><td class="change-removed">-2%p (제거)</td></tr>
+                  <tr><td>TEM</td><td>1%</td><td>→</td><td>0%</td><td class="change-removed">-1%p (제거)</td></tr>
+                  <tr><td>RKLB</td><td>1%</td><td>→</td><td>0%</td><td class="change-removed">-1%p (제거)</td></tr>
+                  <tr><td>XLE (신규)</td><td>0%</td><td>→</td><td>2%</td><td class="change-new">+2%p (신규)</td></tr>
+                  <tr><td>NVDA</td><td>2.5%</td><td>→</td><td>3.5%</td><td class="change-up">+1%p</td></tr>
+                  <tr><td>XAR</td><td>4%</td><td>→</td><td>5%</td><td class="change-up">+1%p</td></tr>
+                  <tr><td>GOOGL</td><td>5.5%</td><td>→</td><td>5%</td><td class="change-down">-0.5%p</td></tr>
+                  <tr><td>GLD</td><td>5.5%</td><td>→</td><td>6%</td><td class="change-up">+0.5%p</td></tr>
+                  <tr><td>나머지 전 종목</td><td colspan="3">–</td><td class="change-none">변동 없음</td></tr>
+                </tbody>
+              </table>
+            </div>
 
-      if (column === 'name') {
-        valA = a.name.toLowerCase();
-        valB = b.name.toLowerCase();
-      } else if (column === 'ticker') {
-        valA = a.ticker.toLowerCase();
-        valB = b.ticker.toLowerCase();
-      } else if (column === 'weight') {
-        valA = a.weight;
-        valB = b.weight;
-      }
+            <p style="margin: 12px 0 6px; font-weight: 600;">주요 변경사항</p>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>ARKQ 완전 매각 (-2%): 고비용(0.75%) + TSLA·RKLB 개별 보유로 중복, 비용 대비 효용 낮음</li>
+              <li>TEM 완전 매각 (-1%): 적자 지속 + 1% 비중으로 상방 기여도 미미, LLY가 헬스케어 테마 커버</li>
+              <li>RKLB 완전 매각 (-1%): XAR(4.4%) 통해 간접 보유 유지, 개별주 직접 보유 필요성 낮음</li>
+              <li>XLE 신규 편입 (+2%): 전통 에너지 축 확보, 보수 0.09%로 비용 효율적, 인플레·달러 헷지</li>
+              <li>NVDA 증액 (+1%): 확신 있는 AI 인프라 핵심주 집중도 강화</li>
+              <li>XAR 증액 (+1%): 지정학 리스크 헷지 강화, 방산 지출 확대 트렌드 수혜</li>
+              <li>GOOGL 소폭 축소 (-0.5%): SPY/VOO 내 이미 상당 비중 노출, 재원 마련</li>
+              <li>GLD 증액 (+0.5%): 안전자산 비중 소폭 강화, 불확실성 대응</li>
+              <li>총 비중: 100% 유지 / 종목 수: -2개 (2026년 목표 달성)</li>
+            </ul>
 
-      if (valA < valB) return direction === 'asc' ? -1 : 1;
-      if (valA > valB) return direction === 'asc' ? 1 : -1;
-      return 0;
-    });
-  }
+            <h3 style="margin: 16px 0 6px; font-size: 14px;">핵심 인사이트</h3>
 
-  // 정렬 인디케이터 업데이트
-  function updateSortIndicators() {
-    document.querySelectorAll('.sortable').forEach(th => {
-      th.classList.remove('asc', 'desc');
-      if (th.dataset.sort === currentSort.column) {
-        th.classList.add(currentSort.direction);
-      }
-    });
-  }
+            <p style="margin: 10px 0 6px; font-weight: 600;">1) 3월 리밸런싱 의도</p>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>비용 구조 개선: ARKQ(0.75%) 제거로 연간 보수 부담 실질 감소</li>
+              <li>에너지 균형: 청정에너지(TAN 2.5% + GRID 3%) + 전통에너지(XLE 2%) 조합 완성</li>
+              <li>집중도 강화: 확신 있는 NVDA·XAR으로 재원 배분, 소규모 분산 축소</li>
+              <li>포트폴리오 단순화: 22개 → 22개이나 저비중·고리스크 종목 3개 정리로 관리 효율 향상</li>
+            </ul>
 
-  // 파이 차트
-  function renderPieChart() {
-    const labels = portfolioData.map(item => item.name);
-    const data = portfolioData.map(item => item.weight);
+            <p style="margin: 12px 0 6px; font-weight: 600;">2) 에너지 포지션 구성 (3월 기준)</p>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>TAN 2.5% (태양광) + GRID 3% (전력 인프라) + XLE 2% (전통 에너지) = 총 7.5%</li>
+              <li>청정:전통 = 5.5% : 2% 비율로 성장 테마 우선, 방어 역할 보완</li>
+              <li>XLE는 오일 사이클 수혜 + 포트폴리오 내 유일한 전통 자원 축</li>
+            </ul>
 
-    const ctxPie = document.getElementById("weightPieChart").getContext("2d");
-    new Chart(ctxPie, {
-      type: "pie",
-      data: {
-        labels,
-        datasets: [{ data }]
+            <p style="margin: 12px 0 6px; font-weight: 600;">3) 리스크 관리</p>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>저비중 고변동성 포지션(TEM·RKLB) 제거로 멘탈 리스크 축소</li>
+              <li>GLD 6%로 금 비중 강화, 지정학·금리 불확실성 대응</li>
+              <li>NVDA 3.5% — 고집중이나 AI 인프라 수요 장기 구조적 성장 확신</li>
+              <li>XAR 5% — 방산 지출 증가(NATO·유럽 재무장) 구조적 수혜 지속</li>
+            </ul>
+
+            <h3 style="margin: 16px 0 6px; font-size: 14px;">종합 평가</h3>
+            <p style="margin: 0 0 6px;"><strong>평가 점수:</strong> 8.9/10 <span style="color: #10b981;">▲ +0.2</span></p>
+            <p style="margin: 0 0 6px; color: var(--text-sub);">
+              비용 효율화, 에너지 축 완성, 집중도 강화가 동시에 이루어진 리밸런싱. 포트폴리오 품질 개선이 명확하게 이루어진 달.
+            </p>
+
+            <p style="margin: 12px 0 6px; font-weight: 600;">목표 달성 가능성</p>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>연 15% 목표 달성 확률: 약 67~72% (2월 대비 소폭 개선)</li>
+              <li>NVDA·XAR 집중 강화로 상방 모멘텀 증가</li>
+              <li>에너지 3축 완성으로 섹터 다각화 개선</li>
+              <li>저비용 구조 전환으로 장기 복리 효율 향상</li>
+            </ul>
+
+            <h3 style="margin: 16px 0 6px; font-size: 14px;">4월 리밸런싱 검토 과제</h3>
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.6;">
+              <li>TAN(0.70%) 재검토: 저비용 대안(ICLN·ACES) 전환 또는 유지 판단</li>
+              <li>소비재·헬스케어 섹터 노출 검토: XLP 또는 XLV 1~2% 소폭 추가 고려</li>
+              <li>IONQ(1.5%) 포지션 재평가: 양자컴퓨팅 상용화 타임라인 점검</li>
+              <li>월간 리밸런싱 루틴 정착 (목표 비중 ±3%p 기준)</li>
+            </ul>
+
+            <p style="margin: 14px 0 0; font-weight: 600;">성공의 핵심</p>
+            <p style="margin: 4px 0 0; color: var(--text-sub);">
+              매월 작은 개선을 통한 점진적 포트폴리오 최적화 + 시장 변동성에 흔들리지 않는 장기 투자 원칙
+            </p>
+          </div>
+
+        </div>
+      </details>
+    </section>
+
+  </div>
+
+  <script>
+    const portfolioData = [
+      { name: "SPY / VOO (S&P 500)", ticker: "SPY / VOO", type: "etf", typeLabel: "ETF · 지수", weight: 36, etfKey: "SPY_VOO" },
+      { name: "알파벳 A", ticker: "GOOGL", type: "stock", typeLabel: "개별주", weight: 5 },
+      { name: "GLD", ticker: "GLD", type: "etf", typeLabel: "ETF · 원자재", weight: 6, etfKey: "GLD" },
+      { name: "VWO", ticker: "VWO", type: "etf", typeLabel: "ETF · 신흥국", weight: 5.5, etfKey: "VWO" },
+      { name: "JEPQ", ticker: "JEPQ", type: "etf", typeLabel: "ETF · 배당/옵션", weight: 4, etfKey: "JEPQ" },
+      { name: "XAR", ticker: "XAR", type: "etf", typeLabel: "ETF · 항공/방산", weight: 5, etfKey: "XAR" },
+      { name: "테슬라", ticker: "TSLA", type: "stock", typeLabel: "개별주", weight: 3.5 },
+      { name: "팔란티어", ticker: "PLTR", type: "stock", typeLabel: "개별주", weight: 3 },
+      { name: "QTUM", ticker: "QTUM", type: "etf", typeLabel: "ETF · 퀀텀/머신러닝", weight: 3, etfKey: "QTUM" },
+      { name: "GRID", ticker: "GRID", type: "etf", typeLabel: "ETF · 전력 인프라", weight: 3, etfKey: "GRID" },
+      { name: "VEA", ticker: "VEA", type: "etf", typeLabel: "ETF · 선진국(미국 제외)", weight: 3, etfKey: "VEA" },
+      { name: "엔비디아", ticker: "NVDA", type: "stock", typeLabel: "개별주", weight: 3.5 },
+      { name: "TAN", ticker: "TAN", type: "etf", typeLabel: "ETF · 태양광", weight: 2.5, etfKey: "TAN" },
+      { name: "XLE", ticker: "XLE", type: "etf", typeLabel: "ETF · 에너지", weight: 2, etfKey: "XLE" },
+      { name: "애플", ticker: "AAPL", type: "stock", typeLabel: "개별주", weight: 2 },
+      { name: "마이크로소프트", ticker: "MSFT", type: "stock", typeLabel: "개별주", weight: 2 },
+      { name: "아마존", ticker: "AMZN", type: "stock", typeLabel: "개별주", weight: 2 },
+      { name: "일라이 릴리", ticker: "LLY", type: "stock", typeLabel: "개별주", weight: 2 },
+      { name: "메타", ticker: "META", type: "stock", typeLabel: "개별주", weight: 2 },
+      { name: "XLF", ticker: "XLF", type: "etf", typeLabel: "ETF · 금융", weight: 2, etfKey: "XLF" },
+      { name: "아이온큐", ticker: "IONQ", type: "stock", typeLabel: "개별주", weight: 1.5 },
+      { name: "브로드컴", ticker: "AVGO", type: "stock", typeLabel: "개별주", weight: 1.5 },
+    ];
+
+    const etfDetails = {
+      SPY_VOO: {
+        fullName: "SPY / VOO",
+        ticker: "SPY · VOO",
+        description: "미국 대형주 500개로 구성된 S&P 500 지수를 추종하는 대표 지수 ETF들. 미국 주식 시장 전체의 성장을 넓게 가져가는 역할을 하는 코어 자산.",
+        meta: "운용 보수는 대략 연 0.03~0.09% 수준(상품별 상이). 상위 보유 종목은 NVIDIA, Apple, Microsoft, Amazon, Alphabet 등이 대표적."
       },
-      options: {
-        plugins: {
-          legend: {
-            position: "right",
-            labels: { boxWidth: 12, font: { size: 11 } }
-          }
-        }
-      }
-    });
-  }
-
-  // 시나리오 차트
-  function renderProjectionChart() {
-    const years = [];
-    const proj15 = [];
-    const proj12 = [];
-    const proj18 = [];
-
-    let cur15 = 40000000;
-    let cur12 = 40000000;
-    let cur18 = 40000000;
-
-    const startYear = 2025;
-    const endYear = 2060;
-    const rateBase = 0.15;
-    const rateLow = 0.12;
-    const rateHigh = 0.18;
-
-    const yearlyContributions = {
-      2026: 69000000,
-      2027: 44000000,
-      2028: 25000000,
-      2029: 25000000
-    };
-
-    for (let y = startYear; y <= endYear; y++) {
-      if (y === startYear) {
-        years.push(y);
-        proj15.push(cur15);
-        proj12.push(cur12);
-        proj18.push(cur18);
-        continue;
-      }
-
-      const add = yearlyContributions[y] || 0;
-      cur15 = cur15 * (1 + rateBase) + add;
-      cur12 = cur12 * (1 + rateLow) + add;
-      cur18 = cur18 * (1 + rateHigh) + add;
-
-      years.push(y);
-      proj15.push(Math.round(cur15));
-      proj12.push(Math.round(cur12));
-      proj18.push(Math.round(cur18));
-    }
-
-    const ctx2 = document.getElementById("projectionChart").getContext("2d");
-
-    const allValues = proj15.concat(proj12, proj18);
-    const maxValue = Math.max(...allValues);
-    const minValue = Math.min(...allValues);
-    const linearMin = 0;
-    const linearMax = maxValue * 1.1;
-    const logMin = Math.max(1e6, minValue * 0.5);
-    const logMax = maxValue * 1.5;
-
-    const linearTickCallback = (value) => {
-      const billion = value / 100000000;
-      if (billion < 0.1) return "";
-      return billion.toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "억";
-    };
-
-    const logTickCallback = (value) => {
-      const billion = value / 100000000;
-      if (billion < 0.1) return "";
-      return billion.toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "억";
-    };
-
-    const linearTickFont = (ctx) => {
-      if (!ctx || !ctx.tick) return {};
-      const val = ctx.tick.value;
-      const target = 10000000000;
-      if (Math.abs(val - target) / target < 0.15) {
-        return { weight: "bold" };
-      }
-      return {};
-    };
-
-    const logTickFont = (ctx) => {
-      if (!ctx || !ctx.tick) return {};
-      const val = ctx.tick.value;
-      const target = 10000000000;
-      if (Math.abs(val - target) / target < 0.2) {
-        return { weight: "bold" };
-      }
-      return {};
-    };
-
-    const scenarioChart = new Chart(ctx2, {
-      type: "line",
-      data: {
-        labels: years,
-        datasets: [
-          {
-            label: "기준 시나리오 (15%)",
-            data: proj15,
-            borderWidth: 3,
-            pointRadius: 0,
-            tension: 0.25,
-            borderDash: [6, 4],
-            borderColor: "#2563eb"
-          },
-          {
-            label: "보수적 시나리오 (12%)",
-            data: proj12,
-            borderWidth: 2,
-            pointRadius: 0,
-            tension: 0.25,
-            borderDash: [4, 4],
-            borderColor: "rgba(107,114,128,0.9)"
-          },
-          {
-            label: "공격적 시나리오 (18%)",
-            data: proj18,
-            borderWidth: 2,
-            pointRadius: 0,
-            tension: 0.25,
-            borderDash: [4, 4],
-            borderColor: "rgba(156,163,175,0.9)"
-          }
+      XLF: {
+        fullName: "Financial Select Sector SPDR Fund",
+        ticker: "XLF",
+        description: "S&P 500에 포함된 금융 섹터 종목에 집중 투자하는 ETF. 대형 은행, 보험, 증권, 자산운용사 등에 고루 분산 투자.",
+        meta: "운용 보수: 대략 연 0.09% 수준. 상위 보유 종목 (예시, 약 비중):",
+        holdings: [
+          { symbol: "BRK.B", name: "Berkshire Hathaway (BRK.B)", weight: "약 13%" },
+          { symbol: "JPM", name: "JPMorgan Chase (JPM)", weight: "약 10%" },
+          { symbol: "V", name: "Visa (V)", weight: "약 7.5%" },
+          { symbol: "MA", name: "Mastercard (MA)", weight: "약 6%" },
+          { symbol: "BAC", name: "Bank of America (BAC)", weight: "약 5%" }
         ]
       },
-      options: {
-        interaction: {
-          mode: "index",
-          intersect: false
-        },
-        plugins: {
-          legend: {
-            display: true,
-            position: "bottom",
-            labels: {
-              usePointStyle: true,
-              padding: 16
-            }
-          },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => {
-                const v = ctx.parsed.y;
-                const billion = v / 100000000;
-                return `${ctx.dataset.label}: 약 ${billion.toLocaleString("ko-KR", { maximumFractionDigits: 1 })}억 원`;
-              }
-            }
+      GLD: {
+        fullName: "SPDR Gold Shares",
+        ticker: "GLD",
+        description: "금 현물(골드 바)에 직접 투자하는 물리적 금 ETF. 금 가격을 수수료 차감 후 최대한 그대로 따라가는 것을 목표로 함.",
+        meta: "운용 보수는 대략 연 0.40% 안팎. 기초자산은 런던 금괴시장 규격에 맞는 금 바 100%에 가까운 비중."
+      },
+      JEPQ: {
+        fullName: "JPMorgan Nasdaq Equity Premium Income",
+        ticker: "JEPQ",
+        description: "나스닥 성장주에 투자하면서 콜옵션 전략을 활용해 프리미엄(분배금)을 노리는 ETF.",
+        meta: "운용 보수는 대략 연 0.35~0.40%대."
+      },
+      XAR: {
+        fullName: "SPDR S&P Aerospace & Defense ETF",
+        ticker: "XAR",
+        description: "항공·방위산업 섹터에 집중 투자하는 ETF.",
+        meta: "운용 보수: 연 0.35% 수준. 상위 보유 종목 (예시, 비중은 2026-01 기준 대략):",
+        holdings: [
+          { symbol: "KARMAN", name: "Karman Holdings", weight: "약 4.6%" },
+          { symbol: "KTOS", name: "Kratos Defense (KTOS)", weight: "약 4.5%" },
+          { symbol: "RKLB", name: "Rocket Lab (RKLB)", weight: "약 4.4%" },
+          { symbol: "AVAV", name: "AeroVironment (AVAV)", weight: "약 4.3%" },
+          { symbol: "LMT", name: "Lockheed Martin (LMT)", weight: "약 3.4%" }
+        ]
+      },
+      QTUM: {
+        fullName: "Defiance Quantum ETF",
+        ticker: "QTUM",
+        description: "양자컴퓨팅 및 머신러닝 관련 기업에 투자하는 테마형 ETF.",
+        meta: "운용 보수: 대략 연 0.40% 수준. 상위 보유 종목 (예시, 약 비중):",
+        holdings: [
+          { symbol: "QNC", name: "Quantum eMotion (QNC)", weight: "약 2%" },
+          { symbol: "MU", name: "Micron Technology (MU)", weight: "약 1.6%" },
+          { symbol: "LRCX", name: "Lam Research (LRCX)", weight: "약 1.5%" },
+          { symbol: "ONTO", name: "Onto Innovation (ONTO)", weight: "약 1.5%" },
+          { symbol: "KLAC", name: "KLA (KLAC)", weight: "약 1.5%" }
+        ]
+      },
+      VWO: {
+        fullName: "Vanguard FTSE Emerging Markets ETF",
+        ticker: "VWO",
+        description: "FTSE Emerging Markets 지수를 추종하는 대표 신흥국 주식 ETF.",
+        meta: "운용 보수: 대략 연 0.07% 수준. 상위 보유 종목 (예시, 약 비중):",
+        holdings: [
+          { symbol: "TSMC", name: "TSMC (2330.TW / TSM)", weight: "약 11%" },
+          { symbol: "TENCENT", name: "Tencent (0700.HK)", weight: "약 4~5%" },
+          { symbol: "BABA", name: "Alibaba (9988.HK)", weight: "약 3%" },
+          { symbol: "HDFCBANK", name: "HDFC Bank", weight: "약 1.1%" },
+          { symbol: "RELIANCE", name: "Reliance Industries", weight: "약 1.1%" }
+        ]
+      },
+      GRID: {
+        fullName: "First Trust Nasdaq Clean Edge Smart Grid Infra",
+        ticker: "GRID",
+        description: "스마트 그리드·전력 인프라 관련 기업에 집중 투자하는 ETF.",
+        meta: "운용 보수: 연 0.63% 수준. 상위 보유 종목 (예시, 약 비중):",
+        holdings: [
+          { symbol: "ABB", name: "ABB Ltd", weight: "약 8%" },
+          { symbol: "NG", name: "National Grid", weight: "약 8%" },
+          { symbol: "SCHNEIDER", name: "Schneider Electric", weight: "약 8%" },
+          { symbol: "JCI", name: "Johnson Controls", weight: "약 7~8%" },
+          { symbol: "ETN", name: "Eaton", weight: "약 7%" }
+        ]
+      },
+      TAN: {
+        fullName: "Invesco Solar ETF",
+        ticker: "TAN",
+        description: "전 세계 태양광 에너지 기업에 집중 투자하는 섹터 ETF.",
+        meta: "운용 보수: 대략 연 0.70% 수준. 상위 보유 종목 (예시, 약 비중):",
+        holdings: [
+          { symbol: "FSLR", name: "First Solar (FSLR)", weight: "약 10%" },
+          { symbol: "NXT", name: "Nextracker (NXT)", weight: "약 10%" },
+          { symbol: "RUN", name: "Sunrun (RUN)", weight: "약 7%" },
+          { symbol: "ENPH", name: "Enphase Energy (ENPH)", weight: "약 6%" }
+        ]
+      },
+      VEA: {
+        fullName: "Vanguard FTSE Developed Markets ETF",
+        ticker: "VEA",
+        description: "미국을 제외한 선진국 주식에 분산 투자하는 ETF.",
+        meta: "운용 보수: 대략 연 0.03% 수준. 상위 보유 종목 (예시, 약 비중):",
+        holdings: [
+          { symbol: "ASML", name: "ASML", weight: "약 1.5%" },
+          { symbol: "SAMSUNG", name: "Samsung Electronics", weight: "약 1.2%" },
+          { symbol: "AZN", name: "AstraZeneca", weight: "약 1.0%" },
+          { symbol: "ROCHE", name: "Roche", weight: "약 1.0% 내외" }
+        ]
+      },
+      XLE: {
+        fullName: "Energy Select Sector SPDR Fund",
+        ticker: "XLE",
+        description: "S&P 500에 포함된 에너지 섹터 종목에 집중 투자하는 ETF. 엑슨모빌, 셰브론 등 오일메이저 및 정유·가스 기업들로 구성. 인플레이션 및 달러 약세 국면에서 방어적 역할 기대.",
+        meta: "운용 보수: 연 0.09% 수준. 상위 보유 종목 (예시, 약 비중):",
+        holdings: [
+          { symbol: "XOM", name: "ExxonMobil (XOM)", weight: "약 23%" },
+          { symbol: "CVX", name: "Chevron (CVX)", weight: "약 16%" },
+          { symbol: "COP", name: "ConocoPhillips (COP)", weight: "약 8%" },
+          { symbol: "EOG", name: "EOG Resources (EOG)", weight: "약 5%" },
+          { symbol: "SLB", name: "SLB", weight: "약 4%" }
+        ]
+      }
+    };
+
+    const holdingDescriptions = {
+      XAR: {
+        KARMAN: "Karman Holdings: 항공우주 부품·서비스 업체로, 민간/군용 항공기와 우주 관련 부품을 공급.",
+        KTOS: "Kratos Defense (KTOS): 무인기(UAV), 위성 통신, 방산 시스템을 만드는 미국 방위산업 회사.",
+        RKLB: "Rocket Lab (RKLB): 소형 위성을 위한 로켓 발사 서비스와 위성 플랫폼을 제공하는 뉴질랜드/미국 우주 기업.",
+        AVAV: "AeroVironment (AVAV): 소형 무인기·미사일 시스템을 만드는 방산 업체로, 정찰 드론에 강점.",
+        LMT: "Lockheed Martin (LMT): F-35 전투기, 미사일, 우주 시스템 등 다양한 방산 장비를 생산하는 글로벌 1위급 방산 기업."
+      },
+      QTUM: {
+        QNC: "Quantum eMotion (QNC): 양자 난수 생성 기술 등 보안용 양자기술을 연구·개발하는 캐나다 기업.",
+        MU: "Micron (MU): 메모리 반도체(DRAM, NAND) 대형 제조사로, 데이터센터·AI·모바일 수요에 노출.",
+        LRCX: "Lam Research (LRCX): 반도체 제조용 식각·증착 장비 분야 글로벌 선두 업체.",
+        ONTO: "Onto Innovation (ONTO): 반도체 공정 검사·계측 장비 회사로, 웨이퍼 검사 솔루션에 강점.",
+        KLAC: "KLA (KLAC): 반도체 공정 제어·검사 장비 글로벌 강자. 수율 관리와 공정 안정화에 필수 솔루션을 제공."
+      },
+      VWO: {
+        TSMC: "TSMC: 세계 최대 파운드리(반도체 위탁생산) 업체. 고급 공정(3nm 등)에서 압도적인 점유율을 가짐.",
+        TENCENT: "Tencent: 위챗, 게임, 핀테크, 클라우드 등 중국 디지털 생태계를 이끄는 빅테크 기업.",
+        BABA: "Alibaba: 전자상거래(타오바오·티몰), 클라우드(알리바바 클라우드) 등을 가진 중국 빅테크.",
+        HDFCBANK: "HDFC Bank: 인도 대형 민간 은행으로, 소매·기업 금융 모두에서 인도 성장에 레버리지.",
+        RELIANCE: "Reliance Industries: 인도 대형 복합기업. 에너지·리테일·통신(Jio) 등 여러 성장 축을 보유."
+      },
+      GRID: {
+        ABB: "ABB: 전력·자동화·로봇 등 산업 인프라 솔루션을 제공하는 스위스 기반 글로벌 기업.",
+        NG: "National Grid: 영국·미국에서 송배전망을 운영하는 전력 유틸리티.",
+        SCHNEIDER: "Schneider Electric: 전력 관리·자동화 솔루션 글로벌 리더. 빌딩·데이터센터·산업용 전력 관리에 강점.",
+        JCI: "Johnson Controls: 빌딩 관리 시스템, HVAC, 스마트 빌딩 솔루션을 제공하는 미국 기업.",
+        ETN: "Eaton: 전력 관리, 배전 장비, 산업용 부품을 생산하는 글로벌 전력 인프라 기업."
+      },
+      TAN: {
+        FSLR: "First Solar (FSLR): 박막(Thin-film) 태양광 모듈을 만드는 미국 업체. 유틸리티급 발전소 중심.",
+        NXT: "Nextracker (NXT): 태양광 패널을 태양 방향으로 움직여 효율을 높이는 트래커 시스템 전문 회사.",
+        RUN: "Sunrun (RUN): 미국 주택용 태양광 설치 및 금융 솔루션 제공 업체.",
+        ENPH: "Enphase Energy (ENPH): 태양광용 마이크로 인버터, 에너지 저장 시스템 등을 만드는 파워 일렉트로닉스 기업."
+      },
+      VEA: {
+        ASML: "ASML: 극자외선(EUV) 노광 장비를 사실상 독점 공급하는 네덜란드 반도체 장비 회사.",
+        SAMSUNG: "Samsung Electronics: 메모리·모바일·가전 등 다각화된 사업을 가진 한국 대표 IT 대형주.",
+        AZN: "AstraZeneca: 영국-스웨덴계 글로벌 제약사. 항암·면역질환 등 혁신 신약 파이프라인을 보유.",
+        ROCHE: "Roche: 스위스 제약·진단 기업으로, 항암제와 진단장비에서 세계적인 경쟁력을 보유."
+      },
+      XLF: {
+        "BRK.B": "Berkshire Hathaway (BRK.B): 워런 버핏의 복합 기업. 보험, 철도, 에너지, 제조 등 다각화된 사업 포트폴리오를 보유.",
+        JPM: "JPMorgan Chase (JPM): 미국 최대 은행 중 하나. 투자은행, 자산관리, 소매금융 등 종합 금융 서비스 제공.",
+        V: "Visa (V): 글로벌 카드 결제 네트워크 1위. 전 세계 결제 인프라를 장악한 핀테크 기업.",
+        MA: "Mastercard (MA): 글로벌 카드 결제 네트워크 2위. Visa와 함께 디지털 결제 생태계를 주도.",
+        BAC: "Bank of America (BAC): 미국 2위 은행. 소매·기업·투자은행 전 영역에서 강력한 입지."
+      },
+      XLE: {
+        XOM: "ExxonMobil (XOM): 세계 최대 민간 석유회사 중 하나. 탐사·생산·정제·화학까지 수직 통합된 에너지 대형주.",
+        CVX: "Chevron (CVX): 글로벌 2위권 오일메이저. 미국 내 퍼미안 분지 생산 비중이 높고 LNG 사업도 확장 중.",
+        COP: "ConocoPhillips (COP): 탐사·생산(E&P) 특화 대형 독립계 석유회사. 비용 효율성이 업계 최고 수준.",
+        EOG: "EOG Resources (EOG): 셰일오일 중심의 독립계 E&P 기업. 퍼미안·이글포드 등 주요 셰일 지대에서 생산.",
+        SLB: "SLB (구 슐럼베르거): 세계 최대 유전 서비스 기업. 시추·평가·생산 등 오일필드 기술 서비스 전반을 제공."
+      }
+    };
+
+    let currentSort = { column: 'weight', direction: 'desc' };
+    let filteredData = [...portfolioData].sort((a, b) => b.weight - a.weight);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      updateSummary();
+      renderPortfolioTable();
+      updateSortIndicators();
+      renderPieChart();
+      renderProjectionChart();
+      setupEventListeners();
+      setupMonthTabs();
+    });
+
+    function updateSummary() {
+      const total = portfolioData.length;
+      const etfItems = portfolioData.filter(item => item.type === 'etf');
+      const stockItems = portfolioData.filter(item => item.type === 'stock');
+      const etfWeight = etfItems.reduce((sum, item) => sum + item.weight, 0);
+      const stockWeight = stockItems.reduce((sum, item) => sum + item.weight, 0);
+      const totalWeight = etfWeight + stockWeight;
+      document.getElementById('totalCount').textContent = total + '개';
+      document.getElementById('etfWeight').textContent = etfWeight.toFixed(1) + '%';
+      document.getElementById('stockWeight').textContent = stockWeight.toFixed(1) + '%';
+      document.getElementById('totalWeight').textContent = totalWeight.toFixed(1) + '%';
+    }
+
+    function renderPortfolioTable() {
+      const tbody = document.getElementById('portfolioTableBody');
+      tbody.innerHTML = '';
+
+      filteredData.forEach((item) => {
+        const tr = document.createElement('tr');
+        if (item.etfKey) { tr.className = 'etf-row'; tr.dataset.etf = item.etfKey; }
+
+        const nameCell = document.createElement('td');
+        if (item.etfKey) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'etf-link';
+          btn.textContent = item.name;
+          nameCell.appendChild(btn);
+        } else {
+          nameCell.textContent = item.name;
+        }
+
+        const tickerCell = document.createElement('td');
+        tickerCell.className = 'ticker';
+        tickerCell.textContent = item.ticker;
+
+        const typeCell = document.createElement('td');
+        const badge = document.createElement('span');
+        badge.className = item.type === 'etf' ? 'badge-etf' : 'badge-stock';
+        badge.textContent = item.typeLabel;
+        typeCell.appendChild(badge);
+
+        const weightCell = document.createElement('td');
+        weightCell.className = 'weight-cell';
+        weightCell.textContent = item.weight + '%';
+
+        tr.appendChild(nameCell);
+        tr.appendChild(tickerCell);
+        tr.appendChild(typeCell);
+        tr.appendChild(weightCell);
+        tbody.appendChild(tr);
+
+        if (item.etfKey && etfDetails[item.etfKey]) {
+          const detailTr = document.createElement('tr');
+          detailTr.className = 'etf-detail-row';
+          detailTr.dataset.etfDetail = item.etfKey;
+          detailTr.style.display = 'none';
+
+          const detailTd = document.createElement('td');
+          detailTd.colSpan = 4;
+
+          const detail = etfDetails[item.etfKey];
+          let detailHTML = `
+            <div class="etf-detail">
+              <div class="etf-detail-header">
+                <span class="etf-detail-name">${detail.fullName}</span>
+                <span class="etf-detail-ticker">${detail.ticker}</span>
+              </div>
+              <p class="etf-detail-desc">${detail.description}</p>
+              <p class="etf-detail-meta">${detail.meta}</p>
+          `;
+          if (detail.holdings && detail.holdings.length > 0) {
+            detailHTML += '<ul class="etf-detail-holdings" data-etf="' + item.etfKey + '">';
+            detail.holdings.forEach(h => {
+              detailHTML += `<li><button type="button" class="holding-link" data-etf="${item.etfKey}" data-symbol="${h.symbol}">${h.name} — ${h.weight}</button></li>`;
+            });
+            detailHTML += '</ul>';
+            detailHTML += '<div class="holding-info" data-etf="' + item.etfKey + '"></div>';
           }
+          detailHTML += '</div>';
+          detailTd.innerHTML = detailHTML;
+          detailTr.appendChild(detailTd);
+          tbody.appendChild(detailTr);
+        }
+      });
+
+      document.querySelectorAll('.etf-row .etf-link').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const row = btn.closest('.etf-row');
+          const key = row.dataset.etf;
+          const detailRow = document.querySelector('.etf-detail-row[data-etf-detail="' + key + '"]');
+          if (!detailRow) return;
+          const isVisible = detailRow.style.display === 'table-row';
+          document.querySelectorAll('.etf-detail-row').forEach(r => r.style.display = 'none');
+          detailRow.style.display = isVisible ? 'none' : 'table-row';
+        });
+      });
+
+      document.querySelectorAll('.holding-link').forEach(link => {
+        link.addEventListener('click', function () {
+          const etf = this.dataset.etf;
+          const symbol = this.dataset.symbol;
+          const infoBox = document.querySelector('.holding-info[data-etf="' + etf + '"]');
+          if (!infoBox) return;
+          const byEtf = holdingDescriptions[etf] || {};
+          const desc = byEtf[symbol];
+          infoBox.textContent = desc || (this.textContent.replace(/\s+—.+$/, '') + ": 상세 설명은 아직 정리되지 않았습니다.");
+        });
+      });
+    }
+
+    function setupEventListeners() {
+      document.getElementById('searchInput').addEventListener('input', function (e) {
+        const query = e.target.value.toLowerCase();
+        filteredData = portfolioData.filter(item =>
+          item.name.toLowerCase().includes(query) || item.ticker.toLowerCase().includes(query)
+        );
+        renderPortfolioTable();
+      });
+
+      document.querySelectorAll('.sortable').forEach(th => {
+        th.addEventListener('click', function () {
+          const column = this.dataset.sort;
+          if (currentSort.column === column) {
+            currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+          } else {
+            currentSort.column = column;
+            currentSort.direction = 'asc';
+          }
+          sortData(column, currentSort.direction);
+          updateSortIndicators();
+          renderPortfolioTable();
+        });
+      });
+    }
+
+    function setupMonthTabs() {
+      document.querySelectorAll('.month-tab').forEach(btn => {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.month-tab').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.month-content').forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          const target = document.getElementById('report-' + this.dataset.month);
+          if (target) target.classList.add('active');
+        });
+      });
+    }
+
+    function sortData(column, direction) {
+      filteredData.sort((a, b) => {
+        let valA, valB;
+        if (column === 'name') { valA = a.name.toLowerCase(); valB = b.name.toLowerCase(); }
+        else if (column === 'ticker') { valA = a.ticker.toLowerCase(); valB = b.ticker.toLowerCase(); }
+        else if (column === 'weight') { valA = a.weight; valB = b.weight; }
+        if (valA < valB) return direction === 'asc' ? -1 : 1;
+        if (valA > valB) return direction === 'asc' ? 1 : -1;
+        return 0;
+      });
+    }
+
+    function updateSortIndicators() {
+      document.querySelectorAll('.sortable').forEach(th => {
+        th.classList.remove('asc', 'desc');
+        if (th.dataset.sort === currentSort.column) th.classList.add(currentSort.direction);
+      });
+    }
+
+    function renderPieChart() {
+      const labels = portfolioData.map(item => item.name);
+      const data = portfolioData.map(item => item.weight);
+      const ctxPie = document.getElementById("weightPieChart").getContext("2d");
+      new Chart(ctxPie, {
+        type: "pie",
+        data: { labels, datasets: [{ data }] },
+        options: {
+          plugins: {
+            legend: { position: "right", labels: { boxWidth: 12, font: { size: 11 } } }
+          }
+        }
+      });
+    }
+
+    function renderProjectionChart() {
+      const years = [], proj15 = [], proj12 = [], proj18 = [];
+      let cur15 = 40000000, cur12 = 40000000, cur18 = 40000000;
+      const yearlyContributions = { 2026: 69000000, 2027: 44000000, 2028: 25000000, 2029: 25000000 };
+
+      for (let y = 2025; y <= 2060; y++) {
+        if (y === 2025) { years.push(y); proj15.push(cur15); proj12.push(cur12); proj18.push(cur18); continue; }
+        const add = yearlyContributions[y] || 0;
+        cur15 = cur15 * 1.15 + add;
+        cur12 = cur12 * 1.12 + add;
+        cur18 = cur18 * 1.18 + add;
+        years.push(y);
+        proj15.push(Math.round(cur15));
+        proj12.push(Math.round(cur12));
+        proj18.push(Math.round(cur18));
+      }
+
+      const allValues = proj15.concat(proj12, proj18);
+      const maxValue = Math.max(...allValues);
+      const minValue = Math.min(...allValues);
+
+      const tickCb = (value) => {
+        const b = value / 100000000;
+        if (b < 0.1) return "";
+        return b.toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "억";
+      };
+
+      const ctx2 = document.getElementById("projectionChart").getContext("2d");
+      const scenarioChart = new Chart(ctx2, {
+        type: "line",
+        data: {
+          labels: years,
+          datasets: [
+            { label: "기준 시나리오 (15%)", data: proj15, borderWidth: 3, pointRadius: 0, tension: 0.25, borderDash: [6, 4], borderColor: "#2563eb" },
+            { label: "보수적 시나리오 (12%)", data: proj12, borderWidth: 2, pointRadius: 0, tension: 0.25, borderDash: [4, 4], borderColor: "rgba(107,114,128,0.9)" },
+            { label: "공격적 시나리오 (18%)", data: proj18, borderWidth: 2, pointRadius: 0, tension: 0.25, borderDash: [4, 4], borderColor: "rgba(156,163,175,0.9)" }
+          ]
         },
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: "연도"
-            },
-            ticks: {
-              font: (ctx) => {
-                if (!ctx || !ctx.tick) return {};
-                const yr = String(ctx.tick.value ?? ctx.tick.label);
-                if (yr === "2025" || yr === "2055") {
-                  return { weight: "bold" };
+        options: {
+          interaction: { mode: "index", intersect: false },
+          plugins: {
+            legend: { display: true, position: "bottom", labels: { usePointStyle: true, padding: 16 } },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => {
+                  const b = ctx.parsed.y / 100000000;
+                  return `${ctx.dataset.label}: 약 ${b.toLocaleString("ko-KR", { maximumFractionDigits: 1 })}억 원`;
                 }
-                return {};
               }
             }
           },
-          y: {
-            type: "linear",
-            min: linearMin,
-            max: linearMax,
-            title: {
-              display: true,
-              text: "예상 포트폴리오 가치 (억 원 기준)"
-            },
-            ticks: {
-              callback: linearTickCallback,
-              font: linearTickFont
+          scales: {
+            x: { title: { display: true, text: "연도" } },
+            y: {
+              type: "linear", min: 0, max: maxValue * 1.1,
+              title: { display: true, text: "예상 포트폴리오 가치 (억 원 기준)" },
+              ticks: { callback: tickCb }
             }
           }
         }
-      }
-    });
-
-    function applyScaleMode(mode) {
-      const yScale = scenarioChart.options.scales.y;
-
-      if (mode === "linear") {
-        yScale.type = "linear";
-        yScale.min = linearMin;
-        yScale.max = linearMax;
-        yScale.title.text = "예상 포트폴리오 가치 (억 원 기준)";
-        yScale.ticks.callback = linearTickCallback;
-        yScale.ticks.font = linearTickFont;
-      } else {
-        yScale.type = "logarithmic";
-        yScale.min = logMin;
-        yScale.max = logMax;
-        yScale.title.text = "예상 포트폴리오 가치 (억 원 기준, 로그 스케일)";
-        yScale.ticks.callback = logTickCallback;
-        yScale.ticks.font = logTickFont;
-      }
-
-      scenarioChart.update();
-    }
-
-    applyScaleMode("linear");
-
-    document.querySelectorAll(".scale-tab").forEach((btn) => {
-      btn.addEventListener("click", function () {
-        const mode = this.dataset.scale;
-        document.querySelectorAll(".scale-tab").forEach((b) => b.classList.remove("active"));
-        this.classList.add("active");
-        applyScaleMode(mode);
       });
-    });
-  }
 
-</script>
+      function applyScale(mode) {
+        const y = scenarioChart.options.scales.y;
+        if (mode === "linear") {
+          y.type = "linear"; y.min = 0; y.max = maxValue * 1.1;
+          y.title.text = "예상 포트폴리오 가치 (억 원 기준)";
+        } else {
+          y.type = "logarithmic"; y.min = Math.max(1e6, minValue * 0.5); y.max = maxValue * 1.5;
+          y.title.text = "예상 포트폴리오 가치 (억 원 기준, 로그 스케일)";
+        }
+        y.ticks.callback = tickCb;
+        scenarioChart.update();
+      }
+
+      document.querySelectorAll(".scale-tab").forEach(btn => {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".scale-tab").forEach(b => b.classList.remove("active"));
+          this.classList.add("active");
+          applyScale(this.dataset.scale);
+        });
+      });
+    }
+  </script>
 </body>
 </html>
