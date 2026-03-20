@@ -27,7 +27,11 @@
       padding: 24px;
     }
 
-    .container { width: 100%; max-width: 960px; }
+    .container {
+      width: 100%;
+      max-width: 960px;
+      overflow-x: hidden;
+    }
 
     h1 { font-size: 24px; margin: 0 0 4px; }
 
@@ -74,7 +78,12 @@
 
     .search-box:focus { outline: none; border-color: var(--accent); }
 
-    .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      /* 모바일에서 테이블이 카드 경계를 넘지 않도록 */
+      max-width: 100%;
+    }
 
     .portfolio-table {
       width: 100%;
@@ -298,23 +307,151 @@
     .change-none { color: var(--text-sub); }
     .change-removed { color: #dc2626; font-weight: 600; }
 
+    /* ============================
+       모바일 최적화 (핵심 변경 부분)
+       ============================ */
     @media (max-width: 640px) {
-      body { padding: 8px; }
-      .card { padding: 10px 10px; border-radius: 10px; margin-bottom: 10px; }
-      .portfolio-table th, .portfolio-table td { padding: 5px 6px; font-size: 12px; }
-      .summary-grid { grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
-      .summary-item { padding: 8px 10px; }
+      /* body 패딩을 0으로 줄여 화면 전체 사용 */
+      body {
+        padding: 0;
+        background: var(--bg);
+      }
+
+      /* 컨테이너 양쪽 여백 최소화 */
+      .container {
+        padding: 0 6px;
+        overflow-x: hidden;
+      }
+
+      header {
+        padding: 12px 4px 4px;
+        margin-bottom: 8px !important;
+      }
+
+      h1 { font-size: 17px; }
+      .subtitle { font-size: 12px; margin-bottom: 8px; }
+
+      /* 카드 여백 최소화 */
+      .card {
+        padding: 10px 8px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        /* 카드가 화면을 넘지 않도록 */
+        overflow: hidden;
+      }
+
+      /* 요약 그리드: 2열 고정 */
+      .summary-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 8px;
+      }
+
+      .summary-item {
+        padding: 8px 8px;
+        border-radius: 6px;
+      }
+
       .summary-label { font-size: 10px; }
       .summary-value { font-size: 15px; }
-      .controls { flex-direction: column; margin-bottom: 6px; }
-      .search-box { width: 100%; padding: 6px 10px; }
-      h1 { font-size: 18px; }
-      .subtitle { margin-bottom: 10px; }
-      .section-title { font-size: 13px; margin-bottom: 6px; }
-      .section-caption { font-size: 11px; margin-bottom: 5px; }
-      .month-tab { padding: 5px 10px; font-size: 12px; }
-      .badge-etf, .badge-stock { font-size: 10px; padding: 1px 6px; }
-      header { margin-bottom: 8px !important; }
+
+      /* 섹션 타이틀 */
+      .section-title { font-size: 13px; margin-bottom: 4px; }
+      .section-caption { font-size: 11px; margin-bottom: 4px; line-height: 1.5; }
+
+      /* 검색 박스 */
+      .controls {
+        flex-direction: column;
+        margin-bottom: 6px;
+        gap: 6px;
+      }
+
+      .search-box {
+        width: 100%;
+        min-width: unset;
+        padding: 7px 10px;
+        font-size: 13px;
+      }
+
+      /* 테이블 */
+      .table-wrapper {
+        margin: 0 -8px;          /* 카드 패딩 상쇄해서 좌우 꽉 차게 */
+        padding: 0 8px;
+        overflow-x: auto;
+      }
+
+      .portfolio-table {
+        font-size: 12px;
+        min-width: 0;
+      }
+
+      .portfolio-table th,
+      .portfolio-table td {
+        padding: 6px 6px;
+        font-size: 11px;
+      }
+
+      /* 뱃지 */
+      .badge-etf, .badge-stock {
+        font-size: 10px;
+        padding: 1px 5px;
+      }
+
+      /* 차트 */
+      .chart-wrapper {
+        max-width: 100%;
+      }
+
+      /* 섹터 도넛 차트 — 세로 배치 */
+      #sectorDonutChart {
+        width: 160px !important;
+        max-width: 160px;
+      }
+
+      /* 섹터 레전드 */
+      #sectorLegend {
+        font-size: 11px;
+      }
+
+      /* 월 탭 */
+      .month-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 0;
+      }
+
+      .month-tab {
+        padding: 6px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      /* 월별 보고서 내 테이블 */
+      .report-body .portfolio-table th,
+      .report-body .portfolio-table td {
+        font-size: 10px;
+        padding: 5px 4px;
+      }
+
+      /* 리스트 여백 */
+      ul { padding-left: 14px; }
+
+      /* 스케일 탭 */
+      .scale-tabs { margin-bottom: 6px; }
+      .scale-tab { padding: 3px 8px; font-size: 11px; }
+    }
+
+    /* 아주 작은 화면 (360px 이하) 추가 대응 */
+    @media (max-width: 360px) {
+      .container { padding: 0 2px; }
+
+      .portfolio-table th,
+      .portfolio-table td { padding: 5px 4px; font-size: 10px; }
+
+      .summary-value { font-size: 13px; }
+
+      h1 { font-size: 15px; }
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -1020,49 +1157,16 @@
 
     function renderSectorChart() {
       const sectors = [
-        {
-          label: "지수",
-          color: "#2563eb",
-          tickers: ["SPY / VOO"]
-        },
-        {
-          label: "기술",
-          color: "#7c3aed",
-          tickers: ["GOOGL", "JEPQ", "TSLA", "PLTR", "NVDA", "AAPL", "MSFT", "AMZN", "META", "IONQ", "AVGO", "QTUM"]
-        },
-        {
-          label: "글로벌 분산",
-          color: "#0891b2",
-          tickers: ["VWO", "VEA"]
-        },
-        {
-          label: "에너지",
-          color: "#d97706",
-          tickers: ["GRID", "TAN", "XLE"]
-        },
-        {
-          label: "원자재 / 금",
-          color: "#b45309",
-          tickers: ["GLD"]
-        },
-        {
-          label: "방산 / 항공",
-          color: "#64748b",
-          tickers: ["XAR"]
-        },
-        {
-          label: "금융",
-          color: "#059669",
-          tickers: ["XLF"]
-        },
-        {
-          label: "헬스케어",
-          color: "#dc2626",
-          tickers: ["LLY"]
-        }
+        { label: "지수", color: "#2563eb", tickers: ["SPY / VOO"] },
+        { label: "기술", color: "#7c3aed", tickers: ["GOOGL", "JEPQ", "TSLA", "PLTR", "NVDA", "AAPL", "MSFT", "AMZN", "META", "IONQ", "AVGO", "QTUM"] },
+        { label: "글로벌 분산", color: "#0891b2", tickers: ["VWO", "VEA"] },
+        { label: "에너지", color: "#d97706", tickers: ["GRID", "TAN", "XLE"] },
+        { label: "원자재 / 금", color: "#b45309", tickers: ["GLD"] },
+        { label: "방산 / 항공", color: "#64748b", tickers: ["XAR"] },
+        { label: "금융", color: "#059669", tickers: ["XLF"] },
+        { label: "헬스케어", color: "#dc2626", tickers: ["LLY"] }
       ];
 
-      // 섹터별 비중 계산
       const sectorData = sectors.map(s => {
         const total = portfolioData
           .filter(item => s.tickers.includes(item.ticker))
@@ -1070,7 +1174,6 @@
         return { ...s, total };
       });
 
-      // 도넛 차트
       const ctx = document.getElementById("sectorDonutChart").getContext("2d");
       new Chart(ctx, {
         type: "doughnut",
@@ -1097,7 +1200,6 @@
         }
       });
 
-      // 커스텀 범례
       const legend = document.getElementById("sectorLegend");
       legend.innerHTML = sectorData.map(s => {
         const items = portfolioData.filter(item => s.tickers.includes(item.ticker));
