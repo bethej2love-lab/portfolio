@@ -306,12 +306,13 @@
     /* ===== 월간 기록 트래커 ===== */
     .tracker-form { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; margin-bottom: 14px; }
     .tracker-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
-    .tracker-field { display: flex; flex-direction: column; gap: 3px; }
+    .tracker-field { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
     .tracker-label { font-size: 10px; font-weight: 600; color: var(--text-sub); }
     .tracker-input {
       padding: 7px 9px; border: 1px solid var(--border); border-radius: 7px;
       font-size: 13px; font-family: inherit; background: #fff; color: var(--text-main);
-      width: 100%;
+      width: 100%; box-sizing: border-box; min-width: 0;
+      -webkit-appearance: none; appearance: none;
     }
     .tracker-input:focus { outline: none; border-color: var(--accent); }
     .tracker-save-btn {
@@ -334,6 +335,7 @@
     .tracker-del-btn { border: none; background: none; color: #9ca3af; cursor: pointer; font-size: 14px; padding: 0 4px; font-family: inherit; }
     .tracker-del-btn:hover { color: #dc2626; }
     @media (max-width: 640px) {
+      .tracker-form { padding: 10px; }
       .tracker-form-row { grid-template-columns: 1fr 1fr; gap: 6px; }
       .tracker-input { font-size: 12px; padding: 6px 7px; }
       .tracker-table { font-size: 11px; }
