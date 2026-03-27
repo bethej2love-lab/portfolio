@@ -95,20 +95,25 @@
     #projectionChart { width: 100%; height: auto; }
 
     /* ── 파이 차트 레이아웃 ── */
-    .pie-layout { display: grid; grid-template-columns: 1fr 190px; gap: 24px; align-items: center; max-width: 660px; margin: 0 auto; }
-    .pie-canvas-wrap { display: flex; justify-content: center; }
-    .pie-canvas-wrap canvas { width: 100% !important; max-width: 340px; height: auto !important; }
-    .pie-legend { display: flex; flex-direction: column; gap: 5px; }
-    .pie-legend-item { display: flex; align-items: center; gap: 7px; font-size: 11px; color: #374151; }
+    .pie-canvas-wrap { display: flex; justify-content: center; margin-bottom: 16px; }
+    .pie-canvas-wrap canvas { width: 320px !important; height: 320px !important; }
+    .pie-legend {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px 12px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .pie-legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: #374151; }
     .pie-legend-dot { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
 
     /* ── 섹터 도넛 레이아웃 ── */
     .sector-grid { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: center; max-width: 640px; margin: 0 auto; }
     .sector-canvas-wrap { display: flex; justify-content: center; align-items: center; }
 
-    /* 모바일 파이 범례 — 기본 숨김, 모바일에서만 표시 */
+    /* 모바일 파이 범례 */
     #pieLegendMobile { display: none; }
-    #pieLegendDesktop { display: flex; }
+    #pieLegendDesktop { display: grid; }
     .scale-tabs { display: inline-flex; border-radius: 999px; background: #f3f4f6; padding: 2px; margin-bottom: 8px; gap: 4px; }
     .scale-tab { border: none; background: transparent; padding: 4px 10px; border-radius: 999px; font-size: 11px; cursor: pointer; color: #6b7280; }
     .scale-tab.active { background: #2563eb; color: #fff; font-weight: 600; }
@@ -173,9 +178,9 @@
       .badge-etf, .badge-stock { font-size: 9px; padding: 1px 4px; }
 
       /* ── 파이 차트 모바일 ── */
-      .pie-layout { grid-template-columns: 1fr; gap: 0; }
-      .pie-legend { display: none; }
-      .pie-canvas-wrap canvas { max-width: 260px; }
+      .pie-canvas-wrap canvas { width: 240px !important; height: 240px !important; }
+      .pie-legend { display: none !important; }
+      #pieLegendDesktop { display: none !important; }
       #pieLegendMobile {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -183,7 +188,6 @@
         margin-top: 10px;
         font-size: 11px;
       }
-      #pieLegendDesktop { display: none; }
 
       /* ── 섹터 도넛 모바일 ── */
       .sector-grid { grid-template-columns: 1fr; gap: 12px; justify-items: center; }
@@ -382,13 +386,11 @@
   <section class="card">
     <h2 class="section-title">목표 비중 원형 차트</h2>
     <p class="section-caption">각 종목의 목표 비중 원형 그래프</p>
-    <div class="pie-layout">
-      <div class="pie-canvas-wrap">
-        <canvas id="weightPieChart"></canvas>
-      </div>
-      <div class="pie-legend" id="pieLegendDesktop"></div>
+    <div class="pie-canvas-wrap">
+      <canvas id="weightPieChart"></canvas>
     </div>
-    <!-- 모바일 전용 2열 범례 -->
+    <!-- 범례: 데스크톱 3열 / 모바일 2열 -->
+    <div class="pie-legend" id="pieLegendDesktop"></div>
     <div id="pieLegendMobile"></div>
   </section>
 
