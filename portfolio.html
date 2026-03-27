@@ -91,7 +91,7 @@
     .holding-link { border: none; background: none; padding: 0; margin: 0; font: inherit; cursor: pointer; color: #111827; }
     .holding-link:hover { text-decoration: underline; }
     .holding-info { margin-top: 6px; font-size: 11px; color: var(--text-sub); }
-    .chart-wrapper { position: relative; max-width: 800px; margin: 0 auto; }
+    .chart-wrapper { position: relative; max-width: 680px; margin: 0 auto; }
     #weightPieChart, #projectionChart { width: 100%; height: auto; }
     /* 모바일 파이 범례 — 기본 숨김, 모바일에서만 표시 */
     #pieLegendMobile { display: none; }
@@ -375,9 +375,9 @@
   <section class="card">
     <h2 class="section-title">섹터별 비중</h2>
     <p class="section-caption">종목을 섹터로 묶어 포트폴리오 균형을 확인하는 차트입니다.</p>
-    <div class="sector-grid" style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;max-width:700px;margin:0 auto;">
-      <div style="display:flex;justify-content:center;"><canvas id="sectorDonutChart"></canvas></div>
-      <div id="sectorLegend"></div>
+    <div class="sector-grid" style="display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:center;max-width:680px;margin:0 auto;">
+      <div style="display:flex;justify-content:center;align-items:center;"><canvas id="sectorDonutChart" style="width:240px;height:240px;"></canvas></div>
+      <div id="sectorLegend" style="min-width:0;"></div>
     </div>
   </section>
 
@@ -1199,12 +1199,13 @@
       type:"pie",
       data:{ labels:sorted.map(i=>i.name), datasets:[{ data:sorted.map(i=>i.weight) }] },
       options:{
-        layout:{ padding:{ top:8, bottom:8, left:8, right:40 } },
+        layout:{ padding:{ top:8, bottom:8, left:8, right:20 } },
+        aspectRatio: 1.6,
         plugins:{
           legend:{
             display: !isMobile,
             position:"right",
-            labels:{ boxWidth:14, font:{ size:12 }, padding:20 }
+            labels:{ boxWidth:13, font:{ size:11 }, padding:14 }
           }
         }
       }
@@ -1249,7 +1250,7 @@
     new Chart(document.getElementById("sectorDonutChart").getContext("2d"),{
       type:"doughnut",
       data:{ labels:sd.map(s=>s.label), datasets:[{ data:sd.map(s=>s.total), backgroundColor:sd.map(s=>s.color), borderWidth:2, borderColor:"#ffffff", hoverOffset:6 }] },
-      options:{ cutout:"62%", plugins:{ legend:{ display:false }, tooltip:{ callbacks:{ label:ctx=>` ${ctx.label}: ${ctx.parsed}%` } } } }
+      options:{ cutout:"62%", aspectRatio:1, plugins:{ legend:{ display:false }, tooltip:{ callbacks:{ label:ctx=>` ${ctx.label}: ${ctx.parsed}%` } } } }
     });
 
     document.getElementById("sectorLegend").innerHTML = sd.map(s=>{
