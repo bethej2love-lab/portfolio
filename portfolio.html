@@ -375,8 +375,8 @@
   <section class="card">
     <h2 class="section-title">섹터별 비중</h2>
     <p class="section-caption">종목을 섹터로 묶어 포트폴리오 균형을 확인하는 차트입니다.</p>
-    <div class="sector-grid" style="display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:center;max-width:680px;margin:0 auto;">
-      <div style="display:flex;justify-content:center;align-items:center;"><canvas id="sectorDonutChart" style="width:240px;height:240px;"></canvas></div>
+    <div class="sector-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;max-width:680px;margin:0 auto;">
+      <div style="display:flex;justify-content:center;align-items:center;"><canvas id="sectorDonutChart" style="width:220px;height:220px;max-width:220px;"></canvas></div>
       <div id="sectorLegend" style="min-width:0;"></div>
     </div>
   </section>
@@ -1199,7 +1199,7 @@
       type:"pie",
       data:{ labels:sorted.map(i=>i.name), datasets:[{ data:sorted.map(i=>i.weight) }] },
       options:{
-        layout:{ padding:{ top:8, bottom:8, left:8, right:20 } },
+        layout:{ padding:{ top:8, bottom:8, left:60, right:20 } },
         aspectRatio: 1.6,
         plugins:{
           legend:{
