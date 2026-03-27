@@ -91,7 +91,7 @@
     .holding-link { border: none; background: none; padding: 0; margin: 0; font: inherit; cursor: pointer; color: #111827; }
     .holding-link:hover { text-decoration: underline; }
     .holding-info { margin-top: 6px; font-size: 11px; color: var(--text-sub); }
-    .chart-wrapper { position: relative; max-width: 640px; margin: 0 auto; }
+    .chart-wrapper { position: relative; max-width: 800px; margin: 0 auto; }
     #weightPieChart, #projectionChart { width: 100%; height: auto; }
     /* 모바일 파이 범례 — 기본 숨김, 모바일에서만 표시 */
     #pieLegendMobile { display: none; }
@@ -172,6 +172,7 @@
       /* 섹터 도넛 */
       #sectorDonutChart { width: 150px !important; max-width: 150px; }
       #sectorLegend { font-size: 11px; }
+      .sector-grid { grid-template-columns: 1fr !important; justify-items: center; }
 
       /* 월 탭 */
       .month-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -374,9 +375,9 @@
   <section class="card">
     <h2 class="section-title">섹터별 비중</h2>
     <p class="section-caption">종목을 섹터로 묶어 포트폴리오 균형을 확인하는 차트입니다.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:center;">
-      <div style="flex:0 0 auto;width:220px;"><canvas id="sectorDonutChart"></canvas></div>
-      <div style="flex:1;min-width:220px;align-self:center;" id="sectorLegend"></div>
+    <div class="sector-grid" style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;max-width:700px;margin:0 auto;">
+      <div style="display:flex;justify-content:center;"><canvas id="sectorDonutChart"></canvas></div>
+      <div id="sectorLegend"></div>
     </div>
   </section>
 
@@ -1198,12 +1199,12 @@
       type:"pie",
       data:{ labels:sorted.map(i=>i.name), datasets:[{ data:sorted.map(i=>i.weight) }] },
       options:{
-        layout:{ padding:{ top:4, bottom:4, left:4, right:24 } },
+        layout:{ padding:{ top:8, bottom:8, left:8, right:40 } },
         plugins:{
           legend:{
             display: !isMobile,
             position:"right",
-            labels:{ boxWidth:14, font:{ size:12 }, padding:16 }
+            labels:{ boxWidth:14, font:{ size:12 }, padding:20 }
           }
         }
       }
