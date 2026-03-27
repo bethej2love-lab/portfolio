@@ -374,9 +374,9 @@
   <section class="card">
     <h2 class="section-title">섹터별 비중</h2>
     <p class="section-caption">종목을 섹터로 묶어 포트폴리오 균형을 확인하는 차트입니다.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;">
-      <div style="flex:0 0 auto;width:220px;max-width:100%;margin:0 auto;"><canvas id="sectorDonutChart"></canvas></div>
-      <div style="flex:1;min-width:200px;align-self:center;" id="sectorLegend"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:center;">
+      <div style="flex:0 0 auto;width:220px;"><canvas id="sectorDonutChart"></canvas></div>
+      <div style="flex:1;min-width:220px;align-self:center;" id="sectorLegend"></div>
     </div>
   </section>
 
@@ -1198,12 +1198,12 @@
       type:"pie",
       data:{ labels:sorted.map(i=>i.name), datasets:[{ data:sorted.map(i=>i.weight) }] },
       options:{
-        layout:{ padding:4 },
+        layout:{ padding:{ top:4, bottom:4, left:4, right:24 } },
         plugins:{
           legend:{
-            display: !isMobile,   // 데스크톱만 내장 범례
+            display: !isMobile,
             position:"right",
-            labels:{ boxWidth:12, font:{ size:11 }, padding:10 }
+            labels:{ boxWidth:14, font:{ size:12 }, padding:16 }
           }
         }
       }
@@ -1253,14 +1253,14 @@
 
     document.getElementById("sectorLegend").innerHTML = sd.map(s=>{
       const tStr = portfolioData.filter(i=>s.tickers.includes(i.ticker)).map(i=>i.ticker).join(", ");
-      return `<div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;">
+      return `<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;">
         <span style="flex-shrink:0;margin-top:3px;width:12px;height:12px;border-radius:3px;background:${s.color};display:inline-block;"></span>
         <div style="flex:1;min-width:0;">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;">
+          <div style="display:flex;align-items:baseline;gap:6px;">
             <span style="font-size:13px;font-weight:600;color:#111827;">${s.label}</span>
             <span style="font-size:13px;font-weight:700;color:#111827;white-space:nowrap;">${s.total.toFixed(1)}%</span>
           </div>
-          <div style="font-size:11px;color:#6b7280;margin-top:1px;word-break:break-all;">${tStr}</div>
+          <div style="font-size:11px;color:#6b7280;margin-top:2px;line-height:1.5;word-break:keep-all;overflow-wrap:break-word;max-width:320px;">${tStr}</div>
         </div></div>`;
     }).join('');
   }
