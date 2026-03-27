@@ -92,9 +92,23 @@
     .holding-link:hover { text-decoration: underline; }
     .holding-info { margin-top: 6px; font-size: 11px; color: var(--text-sub); }
     .chart-wrapper { position: relative; max-width: 680px; margin: 0 auto; }
-    #weightPieChart, #projectionChart { width: 100%; height: auto; }
+    #projectionChart { width: 100%; height: auto; }
+
+    /* ── 파이 차트 레이아웃 ── */
+    .pie-layout { display: grid; grid-template-columns: 1fr 190px; gap: 24px; align-items: center; max-width: 660px; margin: 0 auto; }
+    .pie-canvas-wrap { display: flex; justify-content: center; }
+    .pie-canvas-wrap canvas { width: 100% !important; max-width: 340px; height: auto !important; }
+    .pie-legend { display: flex; flex-direction: column; gap: 5px; }
+    .pie-legend-item { display: flex; align-items: center; gap: 7px; font-size: 11px; color: #374151; }
+    .pie-legend-dot { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
+
+    /* ── 섹터 도넛 레이아웃 ── */
+    .sector-grid { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: center; max-width: 640px; margin: 0 auto; }
+    .sector-canvas-wrap { display: flex; justify-content: center; align-items: center; }
+
     /* 모바일 파이 범례 — 기본 숨김, 모바일에서만 표시 */
     #pieLegendMobile { display: none; }
+    #pieLegendDesktop { display: flex; }
     .scale-tabs { display: inline-flex; border-radius: 999px; background: #f3f4f6; padding: 2px; margin-bottom: 8px; gap: 4px; }
     .scale-tab { border: none; background: transparent; padding: 4px 10px; border-radius: 999px; font-size: 11px; cursor: pointer; color: #6b7280; }
     .scale-tab.active { background: #2563eb; color: #fff; font-weight: 600; }
@@ -158,9 +172,10 @@
       .sortable::after { right: 2px; font-size: 9px; }
       .badge-etf, .badge-stock { font-size: 9px; padding: 1px 4px; }
 
-      /* ── 파이 차트: 차트 아래 2열 범례 ── */
-      .chart-wrapper { max-width: 100%; }
-      #weightPieChart { max-height: 230px; }
+      /* ── 파이 차트 모바일 ── */
+      .pie-layout { grid-template-columns: 1fr; gap: 0; }
+      .pie-legend { display: none; }
+      .pie-canvas-wrap canvas { max-width: 260px; }
       #pieLegendMobile {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -168,11 +183,12 @@
         margin-top: 10px;
         font-size: 11px;
       }
+      #pieLegendDesktop { display: none; }
 
-      /* 섹터 도넛 */
-      #sectorDonutChart { width: 150px !important; max-width: 150px; }
-      #sectorLegend { font-size: 11px; }
-      .sector-grid { grid-template-columns: 1fr !important; justify-items: center; }
+      /* ── 섹터 도넛 모바일 ── */
+      .sector-grid { grid-template-columns: 1fr; gap: 12px; justify-items: center; }
+      #sectorDonutChart { width: 160px !important; height: 160px !important; }
+      #sectorLegend { font-size: 11px; width: 100%; }
 
       /* 월 탭 */
       .month-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -366,18 +382,22 @@
   <section class="card">
     <h2 class="section-title">목표 비중 원형 차트</h2>
     <p class="section-caption">각 종목의 목표 비중 원형 그래프</p>
-    <div class="chart-wrapper">
-      <canvas id="weightPieChart"></canvas>
+    <div class="pie-layout">
+      <div class="pie-canvas-wrap">
+        <canvas id="weightPieChart"></canvas>
+      </div>
+      <div class="pie-legend" id="pieLegendDesktop"></div>
     </div>
+    <!-- 모바일 전용 2열 범례 -->
     <div id="pieLegendMobile"></div>
   </section>
 
   <section class="card">
     <h2 class="section-title">섹터별 비중</h2>
     <p class="section-caption">종목을 섹터로 묶어 포트폴리오 균형을 확인하는 차트입니다.</p>
-    <div class="sector-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;max-width:680px;margin:0 auto;">
-      <div style="display:flex;justify-content:center;align-items:center;"><canvas id="sectorDonutChart" style="width:220px;height:220px;max-width:220px;"></canvas></div>
-      <div id="sectorLegend" style="min-width:0;"></div>
+    <div class="sector-grid">
+      <div class="sector-canvas-wrap"><canvas id="sectorDonutChart"></canvas></div>
+      <div id="sectorLegend"></div>
     </div>
   </section>
 
@@ -1195,42 +1215,49 @@
     const sorted = [...portfolioData].sort((a,b)=>b.weight-a.weight);
     const isMobile = window.innerWidth <= 640;
 
+    // Chart.js 기본 팔레트 (내장 범례 끄고 직접 색 추출용)
+    const COLORS = [
+      '#4dc9f6','#f67019','#f53794','#537bc4','#acc236',
+      '#166a8f','#00a950','#58595b','#8549ba','#e8c534',
+      '#d00000','#3d85c8','#00b0f0','#ff9900','#7030a0',
+      '#c00000','#70ad47','#ed7d31','#a9d18e','#ffd966',
+      '#9dc3e6','#f4b183'
+    ];
+
     new Chart(document.getElementById("weightPieChart").getContext("2d"), {
       type:"pie",
-      data:{ labels:sorted.map(i=>i.name), datasets:[{ data:sorted.map(i=>i.weight) }] },
+      data:{
+        labels: sorted.map(i=>i.name),
+        datasets:[{ data: sorted.map(i=>i.weight), backgroundColor: COLORS }]
+      },
       options:{
-        layout:{ padding:{ top:8, bottom:8, left:60, right:20 } },
-        aspectRatio: 1.6,
-        plugins:{
-          legend:{
-            display: !isMobile,
-            position:"right",
-            labels:{ boxWidth:13, font:{ size:11 }, padding:14 }
-          }
-        }
+        layout:{ padding: 8 },
+        aspectRatio: 1,
+        plugins:{ legend:{ display: false } }
       }
     });
 
-    // 모바일: 차트 아래 2열 HTML 범례
-    if (isMobile) {
-      // Chart.js 기본 20색 팔레트
-      const COLORS = [
-        '#4dc9f6','#f67019','#f53794','#537bc4','#acc236',
-        '#166a8f','#00a950','#58595b','#8549ba','#e8c534',
-        '#d00000','#3d85c8','#00b0f0','#ff9900','#7030a0',
-        '#c00000','#70ad47','#ed7d31','#a9d18e','#ffd966',
-        '#9dc3e6','#f4b183'
-      ];
-      const container = document.getElementById("pieLegendMobile");
-      if (container) {
-        container.innerHTML = sorted.map((item,i) => `
-          <div style="display:flex;align-items:center;gap:4px;padding:2px 0;overflow:hidden;">
-            <span style="flex-shrink:0;width:9px;height:9px;border-radius:2px;background:${COLORS[i]};display:inline-block;"></span>
-            <span style="font-size:10px;color:#374151;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0;">${item.name}</span>
-            <span style="font-size:10px;font-weight:600;color:#111827;white-space:nowrap;flex-shrink:0;">${item.weight}%</span>
-          </div>
-        `).join('');
-      }
+    // 데스크톱 HTML 범례
+    const desktopLegend = document.getElementById("pieLegendDesktop");
+    if (desktopLegend) {
+      desktopLegend.innerHTML = sorted.map((item,i) => `
+        <div class="pie-legend-item">
+          <span class="pie-legend-dot" style="background:${COLORS[i]};"></span>
+          <span>${item.name}</span>
+        </div>
+      `).join('');
+    }
+
+    // 모바일 HTML 범례
+    const mobileLegend = document.getElementById("pieLegendMobile");
+    if (mobileLegend) {
+      mobileLegend.innerHTML = sorted.map((item,i) => `
+        <div style="display:flex;align-items:center;gap:4px;padding:2px 0;overflow:hidden;">
+          <span style="flex-shrink:0;width:9px;height:9px;border-radius:2px;background:${COLORS[i]};display:inline-block;"></span>
+          <span style="font-size:10px;color:#374151;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0;">${item.name}</span>
+          <span style="font-size:10px;font-weight:600;color:#111827;white-space:nowrap;flex-shrink:0;">${item.weight}%</span>
+        </div>
+      `).join('');
     }
   }
 
@@ -1250,7 +1277,7 @@
     new Chart(document.getElementById("sectorDonutChart").getContext("2d"),{
       type:"doughnut",
       data:{ labels:sd.map(s=>s.label), datasets:[{ data:sd.map(s=>s.total), backgroundColor:sd.map(s=>s.color), borderWidth:2, borderColor:"#ffffff", hoverOffset:6 }] },
-      options:{ cutout:"62%", aspectRatio:1, plugins:{ legend:{ display:false }, tooltip:{ callbacks:{ label:ctx=>` ${ctx.label}: ${ctx.parsed}%` } } } }
+      options:{ cutout:"62%", aspectRatio:1, maintainAspectRatio:true, plugins:{ legend:{ display:false }, tooltip:{ callbacks:{ label:ctx=>` ${ctx.label}: ${ctx.parsed}%` } } } }
     });
 
     document.getElementById("sectorLegend").innerHTML = sd.map(s=>{
