@@ -1074,7 +1074,7 @@
   };
 
   let currentSort = { column:'weight', direction:'desc' };
-  let filteredData = [...portfolioData].sort((a,b)=>b.weight-a.weight);
+  let filteredData = [...portfolioData].sort((a,b) => b.weight - a.weight || (a.type==='etf' ? -1 : 1));
 
   document.addEventListener("DOMContentLoaded", function() {
     updateSummary();
@@ -1182,7 +1182,7 @@
           if(col==='name'){va=a.name.toLowerCase();vb=b.name.toLowerCase();}
           else if(col==='ticker'){va=a.ticker.toLowerCase();vb=b.ticker.toLowerCase();}
           else{va=a.weight;vb=b.weight;}
-          return va<vb?(currentSort.direction==='asc'?-1:1):(va>vb?(currentSort.direction==='asc'?1:-1):0);
+          return va<vb?(currentSort.direction==='asc'?-1:1):(va>vb?(currentSort.direction==='asc'?1:-1):(a.type==='etf'?-1:1));
         });
         updateSortIndicators();
         renderPortfolioTable();
