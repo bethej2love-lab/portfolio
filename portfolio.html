@@ -94,22 +94,22 @@
     .chart-wrapper { position: relative; max-width: 680px; margin: 0 auto; }
     #projectionChart { width: 100%; height: auto; }
 
-    .pie-canvas-wrap { display: flex; justify-content: center; margin-bottom: 16px; }
+    .pie-canvas-wrap { display: flex; justify-content: center; margin: 12px 0 20px; }
     .pie-canvas-wrap canvas { width: 320px !important; height: 320px !important; }
     .pie-legend {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 6px 20px;
+      gap: 8px 20px;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0 auto 8px;
     }
     .pie-legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #374151; }
     .pie-legend-dot { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
 
     /* ── 섹터 도넛 레이아웃: 차트 위 중앙, 범례 아래 ── */
-    .sector-grid { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-    .sector-canvas-wrap { display: flex; justify-content: center; }
+    .sector-grid { display: flex; flex-direction: column; align-items: center; gap: 0; }
+    .sector-canvas-wrap { display: flex; justify-content: center; margin: 12px 0 24px; }
 
     #pieLegendMobile { display: none; }
     #pieLegendDesktop { display: flex; }
